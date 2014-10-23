@@ -1,0 +1,83 @@
+/* hide some stuff */
+
+#wp-admin-bar-comments,
+#wp-admin-bar-new-media,
+#wp-admin-bar-new-page,
+#wp-admin-bar-new-user,
+#menu-comments {
+/* 	display:none;*/
+/* NOTE: 
+	must be repeated in the main CSS
+	since the admin bar is also on the frontend
+	 */
+}
+
+
+/* *************************
+* Hide excerpt explanations 
+*********** */
+
+#postexcerpt .inside > p {
+	display: none;
+}
+
+/* ********
+* Hide some File Gallery Settings 
+*********** */
+
+.media-sidebar label[data-setting="title"] {
+    /*display:none;*/
+}
+.media-sidebar label[data-setting="description"] {
+    /*display:none;*/
+}
+.media-sidebar .attachment-display-settings {
+    /*display:none;*/
+}
+
+#media-single-form tr.post_content,
+#media-single-form tr.post_title {
+	/*display: none;*/
+}
+
+
+/* ********
+* Jetpack Improvement  
+* Hide update notifications
+*********** */
+
+.toplevel_page_jetpack .update-plugins {
+	display: none;
+}
+
+
+
+/* ***********
+* Advanced Custom Fields
+************ */
+
+table.acf_input tbody tr td.label {
+	width: 14%;
+}
+
+.acf-gallery .thumbnails  {
+	min-height: 150px;
+}
+
+#acf-acf-bilder-galerie p.label {
+	display: none;
+}
+
+
+/**
+ * MEM Plugin
+ */
+
+.mem-repeat-timestamp {
+	display: none !important;
+}
+
+/***/
+
+
+
