@@ -5,7 +5,11 @@
  */
 
 
-require_once( 'functions-init.php' );
+require_once( 'functions/init.php' );
+
+require_once( 'functions/taxonomies.php' );
+
+require_once( 'functions/metabox.php' );
 
 
 /* login interface
@@ -38,7 +42,35 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 ******************************/
 
 if ( is_user_logged_in() ) {
-		require_once('functions-admin.php');
+		require_once('functions/admin.php');
+}
+
+/* turn links into hyperlinks
+******************************/
+
+function tiss_process_hyperlinks($tiss_content) {
+			
+			$tiss_content = ' ' . $tiss_content;
+			$attribs = ''; 
+			$tiss_content = preg_replace(
+				array(
+					'#([\s>])([\w]+?://[\w\#$%&~/.\-;:=,?@\[\]+]*)#is',
+					'#([\s>])((www|ftp)\.[\w\#$%&~/.\-;:=,?@\[\]+]*)#is',
+					'#([\s>])([a-z0-9\-_.]+)@([^,< \n\r]+)#i'
+					),
+				array(
+					'$1<a href="$2"' . $attribs . '>$2</a>',
+					'$1<a href="http://$2"' . $attribs . '>$2</a>',
+					'$1<a href="mailto:$2@$3">$2@$3</a>'),$tiss_content);
+			$tiss_content = preg_replace("#(<a( [^>]+?>|>))<a [^>]+?>([^>]+?)</a></a>#i", "$1$3</a>", $tiss_content);
+			$tiss_content = trim($tiss_content);
+			
+			return $tiss_content;
+}
+
+function tissParseHyperlinks($string) {
+    // Add <a> tags around all hyperlinks in $string
+    return ereg_replace("[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]", "</a><a href=\"\\0\">\\0</a>", $string);
 }
 
 

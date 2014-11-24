@@ -1,15 +1,3 @@
-/* @override 
-	http://cave12.org/squelettes/c12/cssC12.css
-	http://www.cave12.org/squelettes/c12/cssC12.css
-	http://www.cave12.org/local/cache-css/9c707492f046e867bbd75c4ca2285077.css
-	http://www.cave12.org/squelettes/c12/cssC12-120704.min.css
-	http://www.cave12.org/squelettes/c12/cssC12-120708b.min.css
-	http://beta.cave12.org/squelettes/c12/cssC12.css
-	http://beta.cave12.org/squelettes/c12-2013/css-2013.css
-	http://www.cave12.org/local/cache-css/26defaed02aea38889964eb566dfef1e.css
-	http://www.cave12.org/squelettes/c12-2013/css-2013.css
-*/
-
 /*
 Theme Name: c12
 Theme URI: http://www.cave12.org/
@@ -23,22 +11,22 @@ Theme URI: http://www.cave12.org/
 
 @font-face {
     font-family: 'lmroman8regular';
-    src: url('typo/LMrom/lmroman8-regular.eot');
-    src: url('typo/LMrom/lmroman8-regular.eot?#iefix') format('embedded-opentype'),
-         url('typo/LMrom/lmroman8-regular.woff') format('woff'),
-         url('typo/LMrom/lmroman8-regular.ttf') format('truetype'),
-         url('typo/LMrom/lmroman8-regular.svg#lmroman8regular') format('svg');
+    src: url('../../fonts/LMrom/lmroman8-regular.eot');
+    src: url('../../fonts/LMrom/lmroman8-regular.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/LMrom/lmroman8-regular.woff') format('woff'),
+         url('../../fonts/LMrom/lmroman8-regular.ttf') format('truetype'),
+         url('../../fonts/LMrom/lmroman8-regular.svg#lmroman8regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'lmroman8bold';
-    src: url('typo/LMrom/lmroman8-bold.eot');
-    src: url('typo/LMrom/lmroman8-bold.eot?#iefix') format('embedded-opentype'),
-         url('typo/LMrom/lmroman8-bold.woff') format('woff'),
-         url('typo/LMrom/lmroman8-bold.ttf') format('truetype'),
-         url('typo/LMrom/lmroman8-bold.svg#lmroman8bold') format('svg');
+    src: url('../../fonts/LMrom/lmroman8-bold.eot');
+    src: url('../../fonts/LMrom/lmroman8-bold.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/LMrom/lmroman8-bold.woff') format('woff'),
+         url('../../fonts/LMrom/lmroman8-bold.ttf') format('truetype'),
+         url('../../fonts/LMrom/lmroman8-bold.svg#lmroman8bold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -46,11 +34,11 @@ Theme URI: http://www.cave12.org/
 
 @font-face {
     font-family: 'lmroman8italic';
-    src: url('typo/LMrom/lmroman8-italic.eot');
-    src: url('typo/LMrom/lmroman8-italic.eot?#iefix') format('embedded-opentype'),
-         url('typo/LMrom/lmroman8-italic.woff') format('woff'),
-         url('typo/LMrom/lmroman8-italic.ttf') format('truetype'),
-         url('typo/LMrom/lmroman8-italic.svg#lmroman8italic') format('svg');
+    src: url('../../fonts/LMrom/lmroman8-italic.eot');
+    src: url('../../fonts/LMrom/lmroman8-italic.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/LMrom/lmroman8-italic.woff') format('woff'),
+         url('../../fonts/LMrom/lmroman8-italic.ttf') format('truetype'),
+         url('../../fonts/LMrom/lmroman8-italic.svg#lmroman8italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -386,6 +374,7 @@ h1.site-title,
 	box-shadow: inset 0 0 44px rgb(225, 33, 33);*/
 }
 
+.single-post .date-block,
 .page_article .date-block {
 	margin-top: 1em;
 	display: none;
@@ -772,6 +761,7 @@ ul.top-archive li {display:inline;}
 
 /* @end */
 
+.page-id-24 img,
 .rubrique_liens_soutiens img {
 	display: block;
 	float: left;
@@ -783,6 +773,7 @@ ul.top-archive li {display:inline;}
 	border: 4px double #d0d0d0;
 }
 
+.page-id-24 .entry-content  p:last-of-type,
 .rubrique_liens_soutiens .entry-content  p:last-of-type {
 	float: left;
 	width: 100%;
@@ -1130,235 +1121,6 @@ body.inauguration-2013 {
 
 /* @end */
 
-/* @group Media Queries */
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 740px) {
-			
-		body {
-			font-size: 17px;
-		}	
-			
-		h1.site-title {	
-			font-size: 140%;
-		}	
-			
-		.menu-link {
-			display: none;
-		}
-		
-		.contenu {
-			padding-left: 12em;
-/*			padding-top: 6.5em;*/
-			padding-top: 3.5em;
-			padding-right: 1em;
-			padding-bottom: 3em;
-			/*width:100%;*/
-		}
-		
-		.mini-cal {
-			margin-top: 0.3em;
-/*			margin-left: 6em;*/
-			padding-right: 1em;
-		}
-		
-		.bloc-navig { 
-			font-size: 0.9em;
-			padding-bottom: 1em;
-			position: fixed;
-			/*top:  7em;*/
-			top:  3.5em;
-			clear:left;
-			width: 12em;
-		}
-		
-		.bloc-navig ul li {
-			
-			margin-right: 0;
-			margin-bottom: 0;
-			clear: left;
-			}
-			
-		.bloc-navig li a {
-			border: 0px;
-			padding: 0;
-		}
-	
-		ul.navigation-top {
-			border-top: 0;
-			padding-top: 0;
-		}
-		.navigation-top .li-first {
-			margin-top: 0;
-		}
-		
-		.contenu .art-box .art-date {
-			display: block;	
-		}
-		
-		.contenu div.art-sommaire {
-			width: 60%;
-			left: 20px;
-			padding-right: 15px;
-		}
-		
-		span.summary {
-			display: none;
-		}
-		
-		.page_article .date-block {
-			display: block;
-		}
-		.contenu .intro {
-			padding-left: 9em;
-		}
-		.contenu .intro-redac {
-			padding-left: 13em;
-		}
-		.intro-block {
-			min-height: 10em;
-		}
-		.programme-txt {
-		 max-width: 35em;	
-		}
-
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 860px) {
-
-	.propaganda { 
-		width:100%;
-		float: left;
-		margin: 0.5em 0 0.3em 0;
-	}
-	
-	.propaganda div,
-	.titre-sommaire-h3 {	
-		position:relative;
-		float:left;
-	}
-	
-	.prop-item {
-		border: 0px solid #333;
-		margin-right: 10px;
-		padding:10px;
-		margin-left:10px;
-		font-size: 0.9em;
-		min-height: 4.0em;
-		border: 1px solid #333;
-		border-color: #aaa;
-		border-width: 4px;
-		border-style: double;
-		background-color: #f6f6f6;
-		box-shadow: inset 0 0 8px rgb(236, 236, 236);
-	}
-	
-	.prop-item-label {
-		margin: 0;
-		padding: 0.3em 0.4em 0.3em 0.4em;
-		display: block;
-	}
-	
-	.prop-item:hover {
-		background-color: #f6f6f6;
-		box-shadow: inset 0 0 8px rgb(236, 236, 236);
-	}
-	
-	.prop-item-label {
-		font-size: 120%;
-		padding-left: 0;
-		padding-top: 0;
-	}
-	
-	.programme-pdf .prop-item-label {
-		font-size: 160%;
-	}
-	
-	.newsletter-form .form-text,
-	.newsletter-form .button {
-		display: inline;
-	}
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 1024px) {
-		
-		body {
-			font-size: 18px;
-		}	
-		
-		h1.site-title {	
-			font-size: 190%;
-		}	
-		
-		.mini-cal {
-			margin-top: 0.7em;
-			margin-left: 7em;
-			padding-right: 2em;
-/*			max-height: 3.3em;*/
-			font-size: 90%;
-		}
-		
-		.contenu {
-			padding-top: 4.5em;
-			padding-left: 14em;
-		}
-		.bloc-navig {
-			top:  4.5em;
-		}
-		
-		.contenu div.art-sommaire {
-			width: 80%;
-		}
-		
-		.page_artistes .contenu {
-			width: 70%;	
-		}
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 1200px) {
-		
-		h1.site-title {	
-			font-size: 260%;
-		}	
-		
-		.mini-cal {
-			margin-top: 1.2em;
-			margin-left: 10em;
-/*			padding-right: 2em;*/
-/*			max-height: 3.3em;*/
-			font-size: 100%;
-		}
-		
-		.contenu {
-			padding-top: 5.8em;
-			padding-left: 16em;
-		}
-		.bloc-navig {
-			top:  5.8em;
-		}
-		
-		.contenu #chapo {	
-			font-size: 1.1em;
-		}
-		
-		.page_artistes .contenu {
-			width: 60%;	
-		}
-		
-}
-
-/* @end */
 
 
-
-/* "Daisy, Daisy, give me your answer do. I'm half crazy all for the love of you.
-	It won't be a stylish marriage, I can't afford a carriage.
-	But you'll look sweet upon the seat of a bicycle built for two." */
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    WordPress
- * @subpackage Tabula_Rasa
+ * @subpackage Cave12
  */
 ?>
 	<!DOCTYPE html>
@@ -59,26 +59,14 @@
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references : mathiasbynens.be/notes/touch-icons -->
 		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-		<link rel="icon" href="/favicon.png" type="image/png" />
-
-		<!-- For third-generation iPad with high-resolution Retina display: -->
-		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $GLOBALS["TEMPLATE_RELATIVE_URL"] ?>img/icons/apple-touch-icon-144x144.png">
-		<!-- For iPhone with high-resolution Retina display: -->
-		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $GLOBALS["TEMPLATE_RELATIVE_URL"] ?>img/icons/apple-touch-icon-114x114.png">
-		<!-- For first- and second-generation iPad: -->
-		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $GLOBALS["TEMPLATE_RELATIVE_URL"] ?>img/icons/apple-touch-icon-72x72.png">
-		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-		<link rel="apple-touch-icon" href="<?php echo $GLOBALS["TEMPLATE_RELATIVE_URL"] ?>img/icons/apple-touch-icon.png">
-
-		<style>.hidden {
-				display: none;
-			}</style>
-		<!-- we want this to be hidden immediately before the rest of CSS loads -->
-
+		
+		<style>.hidden {display: none;}</style>
 
 		<!-- Wordpress Head Items -->
 		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		
+		<link rel="profile" href="http://microformats.org/profile/hcalendar">
 
 		<?php wp_head(); ?>
 
@@ -100,17 +88,22 @@ $nfo_body_var .= 'no-js';
 body_class( $nfo_body_var );
 
 ?>>
-<div id="container" class="container">
-	<header role="banner" class="header">
-		<h1 class="h1"><a href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
+<div id="page">
+	
+	<div id="header" class="header">
+	<h1 class="site-title"><a rel="start home" href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
 
-		<p class="description"><?php bloginfo( 'description' ); ?></p>
-	</header>
+	<? 
+	
+	// afficher les dates actuelles
+	include( get_template_directory() . '/inc/mini-calendar.php' );
+	
+	 ?> 
 
-<?php wp_nav_menu( array(
-		'theme_location'  => 'main-menu',
-		'container'       => 'nav',
-		'container_class' => 'clear main-menu default-menu horiz-list small-font',
-		'depth'           => 0,
-	//'link_after'       => '&nbsp;',
-) ); ?>
+
+	<div class="menu-link">
+		<a href="#navigation">menu</a>
+	</div>
+	
+	</div><!--#header-->
+	

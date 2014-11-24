@@ -5,7 +5,11 @@
 
 
 function custom_admin_head() {
-	echo versioned_stylesheet( $GLOBALS["TEMPLATE_RELATIVE_URL"] . "admin/admin.css" );
+	echo '<style>
+	#titlediv {margin-bottom: 2em;}
+	#postexcerpt.postbox {margin-bottom: 0px;}
+	#excerpt {height: 8em;}
+	</style>';
 }
 
 add_action( 'admin_head', 'custom_admin_head' );

@@ -17,42 +17,10 @@
 
 add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
+add_filter( 'allow_minor_auto_core_updates', '__return_true' );
 add_filter( 'allow_major_auto_core_updates', '__return_true' );
 
 
-/* CSS/JS Versioning
-*********************/
-
-// Custom Functions for CSS/Javascript Versioning
-$GLOBALS["TEMPLATE_URL"]          = get_bloginfo( 'template_url' ) . "/";
-$GLOBALS["TEMPLATE_RELATIVE_URL"] = wp_make_link_relative( $GLOBALS["TEMPLATE_URL"] );
-
-// Add ?v=[last modified time] to style sheets
-function versioned_stylesheet( $relative_url, $add_attributes = "" ) {
-	echo '<link rel="stylesheet" href="' . versioned_resource( $relative_url ) . '" ' . $add_attributes . '>' . "\n";
-}
-
-// Add ?v=[last modified time] to javascripts
-function versioned_javascript( $relative_url, $add_attributes = "" ) {
-	echo '<script src="' . versioned_resource( $relative_url ) . '" ' . $add_attributes . '></script>' . "\n";
-}
-
-// Add ?v=[last modified time] to a file url
-function versioned_resource( $relative_url ) {
-	$file         = $_SERVER["DOCUMENT_ROOT"] . $relative_url;
-	$file_version = "";
-
-	if ( file_exists( $file ) ) {
-		$file_version = "?v=" . filemtime( $file );
-	}
-
-	return $relative_url . $file_version;
-}
-
-
-// Unregister jQuery
-// (then re-register it in the footer)
-// ****************************
 
 function custom_register_styles() {
 
@@ -62,8 +30,8 @@ function custom_register_styles() {
 
 	// the MAIN stylesheet
 	wp_enqueue_style(
-			'main_css_style',
-			get_stylesheet_directory_uri() . '/css/00-main.css', // main.css
+			'c12',
+			get_stylesheet_directory_uri() . '/css/dev/00-main.css', // main.css
 			false, // dependencies
 			null // version
 	);
@@ -89,15 +57,6 @@ function custom_register_styles() {
 			false // in_footer
 	);
 
-	wp_deregister_script( 'jquery' );
-	wp_register_script(
-			'jquery',
-			get_site_url() . '/wp-includes/js/jquery/jquery.js',
-			false, // dep
-			'1.10.2', // jquery version
-			true // load in footer !!!
-	);
-	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script(
 	// the MAIN JavaScript file
@@ -105,7 +64,7 @@ function custom_register_styles() {
 			get_stylesheet_directory_uri() . '/js/script.js', // scripts.js
 			array( 'jquery' ), // dependencies
 			null, // version
-			true // in_footer
+			false // in_footer
 	);
 
 }
@@ -125,7 +84,7 @@ remove_action( 'wp_head', 'feed_links_extra', 3 );
 
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'wp_generator' );
+// remove_action( 'wp_head', 'wp_generator' );
 
 // Prevents WordPress from testing ssl capability on domain.com/xmlrpc.php?rsd
 remove_filter( 'atom_service_url', 'atom_service_url_filter' );
@@ -140,8 +99,9 @@ function tabula_rasa_setup() {
 	
 	register_nav_menus(
 				array(
-						'primary'   => __( 'Menu Nr.1' ),
-	//					'secondary' => __( 'Menu Nr.2' ),
+						'menu-one'   => __( 'Menu Nr.1' ),
+						'menu-two' => __( 'Menu Nr.2' ),
+						'menu-three' => __( 'Menu Nr.3' ),
 				)
 		);
 	
