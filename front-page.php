@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="propaganda" class="propaganda">
 	
 	<div id="titre-sommaire" class="titre-sommaire notc">
-		<h3 class="titre-sommaire-h3">PROGRAMME 2014</h3>
+		<h3 class="titre-sommaire-h3">PROGRAMME</h3>
 	</div>
 	
 	<div id="programme-pdf" class="programme-pdf prop-item">

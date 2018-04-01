@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<div id="main" class="main" role="main">
+<div id="contenu" class="contenu main" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -70,11 +70,9 @@ get_header(); ?>
 						</h3>
 						<time datetime="<?php the_time( 'Y-m-d' ) ?>"><?php the_time( 'l, F jS, Y' ) ?></time>
 					</header>
-					<?php the_content() ?>
+					<?php // the_content() ?>
 					<footer>
 						<?php the_tags( 'Tags: ', ', ', '<br />' ); ?>
-						Posted in <?php the_category( ', ' ) ?> |
-						<?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
 					</footer>
 				</article>
 			<?php endwhile; ?>

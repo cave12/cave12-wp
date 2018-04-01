@@ -12,6 +12,16 @@
 	 */
 }
 
+#titlediv {
+/*	margin-bottom: 2em;*/
+}
+#postexcerpt.postbox {
+	margin-bottom: 0px;
+}
+#excerpt {
+	height: 8em;
+}
+
 
 /* *************************
 * Hide excerpt explanations 
@@ -55,7 +65,7 @@
 /* ***********
 * Advanced Custom Fields
 ************ */
-
+/*
 table.acf_input tbody tr td.label {
 	width: 14%;
 }
@@ -66,6 +76,15 @@ table.acf_input tbody tr td.label {
 
 #acf-acf-bilder-galerie p.label {
 	display: none;
+}*/
+
+.acf-field-5480109a6b5c5 .acf-label {
+	display: none;
+}
+
+.acf-field-5480109a6b5c5,
+#acf-group_548010917decc.acf-postbox {
+	margin-bottom: 1.5em;
 }
 
 
