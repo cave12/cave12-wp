@@ -11,6 +11,8 @@ require_once( 'functions/taxonomies.php' );
 
 require_once( 'functions/metabox.php' );
 
+require_once( 'functions/acf.php' );
+
 
 /* login interface
 ******************************/
