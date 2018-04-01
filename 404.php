@@ -6,13 +6,10 @@
 
 get_header(); ?>
 
-	<div id="main" class="main" role="main">
+	<div id="contenu" class="contenu main" role="main">
 
-		<details>
-			<summary><h1 class="h1">Not found</h1></summary>
-			<p><span frown>:(</span></p>
-		</details>
-
+		<h1 class="h1">Not found</h1>
+		
 	</div>
 
 
