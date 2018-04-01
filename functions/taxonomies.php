@@ -1,6 +1,18 @@
 <?php 
 
-
+/*
+ * Contient les fonctions suivantes:
+ 
+ * 1) Renommer les Tags en "Artistes"
+ * 
+ * 2) Création de custom post type: Archive
+ *
+ * 3) Création de taxonomies:
+ *
+ * * a) affiches
+ * * b) lieux
+ * 
+*/
 
 add_action( 'init', 'c12_tags_are_artists');
 
