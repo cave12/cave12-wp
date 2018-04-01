@@ -6,10 +6,13 @@
 
 function custom_admin_head() {
 	echo '<style>
-	#titlediv {margin-bottom: 2em;}
-	#postexcerpt.postbox {margin-bottom: 0px;}
-	#excerpt {height: 8em;}
+	
 	</style>';
+	
+	echo "<link rel='stylesheet' id='c12-admin-css'  href='";
+	echo get_stylesheet_directory_uri() . "/admin/admin.css?ver=";
+	echo time();
+	echo "' type='text/css' media='all' />";
 }
 
 add_action( 'admin_head', 'custom_admin_head' );
@@ -31,49 +34,6 @@ function goodbye_howdy( $wp_admin_bar ) {
 }
 
 add_action( 'admin_bar_menu', 'goodbye_howdy' );
-
-
-/**
- * force a color scheme - by Ipstenu (Mika Epstein)
- * http://halfelf.org/2013/mp6uccess-tips-and-tricks/
- ******************************/
- 
-//add_filter('get_user_option_admin_color', 'change_admin_color');
-//function change_admin_color($result) {
-//    return 'ectoplasm';
-//} 
- 
- 
-/**
-	* set default color scheme - by Andrew S Freeman
-	* https://gist.github.com/andrewsfreeman/8062263
-	*
-	* forked from Till Krss
-	* https://gist.github.com/tillkruess/6401453
-	******************************/
- 
-//add_filter( 'get_user_option_admin_color', function( $color_scheme ) {
-//
-//	global $_wp_admin_css_colors;
-//
-//	if ( 'classic' == $color_scheme || 'fresh' == $color_scheme ) {
-//		$color_scheme = 'ectoplasm';
-//	}
-//	return $color_scheme;
-//
-//}, 5 );
-
-
-/**
-	* define default color scheme for new users:
-	*
-	* http://llocally.com/?p=5251
-	******************************/
-
-add_action( 'user_register', function($userid) {
- update_user_option( $userid, 'admin_color', 'ectoplasm');
-});
-
 
 
 /**
@@ -130,7 +90,7 @@ function tabula_remove_dashboard_widgets() {
 	
 	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
 
-	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'] );
+	// unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'] );
 
 	// RSS feeds:
 	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
@@ -138,32 +98,7 @@ function tabula_remove_dashboard_widgets() {
 }
 add_action( 'wp_dashboard_setup', 'tabula_remove_dashboard_widgets' );
 
-/**
- * Show recent posts :
- * https://gist.github.com/ms-studio/6069116
- */
 
-function wps_recent_posts_dw() {
-	?>
-	<ul style="list-style-type: disc;padding-left: 1.5em;">
-		<?php
-		global $post;
-		$args = array( 'numberposts' => 5 );
-		$myposts = get_posts( $args );
-		foreach ( $myposts as $post ) :  setup_postdata( $post ); ?>
-			<li> <? the_time( 'j F Y' ); ?> 
-				<a href="<?php echo admin_url(); ?>post.php?post=<?php the_ID(); ?>&action=edit"><?php the_title(); ?></a> (<a href="<?php the_permalink(); ?>">visiter</a>)
-			</li>
-		<?php endforeach; ?>
-	</ul>
-<?php
-}
-
-function add_wps_recent_posts_dw() {
-	wp_add_dashboard_widget( 'wps_recent_posts_dw', __( 'Recent Posts' ), 'wps_recent_posts_dw' );
-}
-
-add_action( 'wp_dashboard_setup', 'add_wps_recent_posts_dw' );
 
 /**
  * end of functions-admin.php

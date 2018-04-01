@@ -74,18 +74,6 @@ function tissParseHyperlinks($string) {
 }
 
 
-/* Jetpack
- * Enable only specific modules
- * See http://wp.me/p3Bu3Z-Gt
-************************************/
-
-//function jeherve_only_stats ( $modules ) {
-//    $return = array();
-//    $return['stats'] = $modules['stats'];
-//    return $return;
-//}
-//add_filter( 'jetpack_get_available_modules', 'jeherve_only_stats' );
-
 
 
 // end of functions.php

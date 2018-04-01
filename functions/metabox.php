@@ -53,7 +53,7 @@ if (is_admin()) {
 	    	// 'quicktags' => false, 
 	    	'media_buttons' => false,
 	    	'teeny' => false,
-	    	'tinymce' => false
+	    	'tinymce' => true
 	    	);
 	
 	    /**
@@ -76,7 +76,7 @@ if (is_admin()) {
 	    global $post, $wp_meta_boxes;
 	    
 	    # Output the "advanced" meta boxes:
-	    do_meta_boxes(get_current_screen(), 'advanced', $post);
+	    do_meta_boxes( get_current_screen(), 'advanced', $post );
 	    
 	    # Remove the initial "advanced" meta boxes:
 	    unset($wp_meta_boxes[get_post_type($post)]['advanced']);
