@@ -38,10 +38,16 @@ get_header(); ?>
 			
 			<?php 
 			
-			$mem_date = mem_date_processing( 
-				get_post_meta($post->ID, '_mem_start_date', true) , 
-				get_post_meta($post->ID, '_mem_end_date', true)
-			);
+			$mem_date = '';
+			
+			if ( function_exists( 'mem_date_processing' ) ) {
+			
+				$mem_date = mem_date_processing( 
+					get_post_meta($post->ID, '_mem_start_date', true) , 
+					get_post_meta($post->ID, '_mem_end_date', true)
+				);
+			
+			}
 			
 			// classes: recent / demain / futur
 			
@@ -51,8 +57,13 @@ get_header(); ?>
 			 
 			 <article <?php post_class('art-box vevent') ?> id="post-<?php the_ID(); ?>">
 			 
+			 <?php 
+			 
+			 if ($mem_date) {
+			 
+			  ?>
+			 
 			 <div class="art-date dtstart" role="article">
-			 	
 			 	<?php  
 			 	
 			 	echo '<a href="'. get_the_permalink() .'" rel="bookmark" class="value-title" title="'.esc_attr($mem_date["start-iso"]).'"><div class="uppercase center day">'.date_i18n( "l", $mem_date["start-unix"]).'</div>';
@@ -60,6 +71,11 @@ get_header(); ?>
 			 	echo '<div class="uppercase center month">'.date_i18n( "F", $mem_date["start-unix"]).'</div></a>';
 			 ?>
 			 </div><!-- .art-date -->
+			 <?php 
+			 
+			 }
+			 
+			  ?>
 			 <!-- microformat data -->
 			 	<span class="summary"><?php the_title(); ?></span>
 			 	<span class="category">Concert</span>

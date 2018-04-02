@@ -104,10 +104,14 @@ get_header(); ?>
       
     			$current_post_id = get_the_ID();
     			
-    	  	$mem_date = mem_date_processing( 
-    	  		get_post_meta($current_post_id, '_mem_start_date', true) , 
-    	  		get_post_meta($current_post_id, '_mem_end_date', true)
-    	  	);
+    			if ( function_exists( 'mem_date_processing' ) ) {
+    			
+	    	  	$mem_date = mem_date_processing( 
+	    	  		get_post_meta($current_post_id, '_mem_start_date', true) , 
+	    	  		get_post_meta($current_post_id, '_mem_end_date', true)
+	    	  	);
+    	  	
+    	  	}
       
       ?>
     		
