@@ -14,6 +14,21 @@ require_once( 'functions/metabox.php' );
 require_once( 'functions/acf.php' );
 
 
+/*
+ * Show Scheduled articles:
+ * http://wordpress.stackexchange.com/questions/16794/show-scheduled-posts-in-archive-page
+******************************/
+
+if ( !is_admin() ) :
+function __include_future( $query )
+{
+    if ( $query->is_date() || $query->is_single() )
+        $GLOBALS[ 'wp_post_statuses' ][ 'future' ]->public = true;
+}
+add_filter( 'pre_get_posts', '__include_future' );
+endif;
+
+
 /* login interface
 ******************************/
 
