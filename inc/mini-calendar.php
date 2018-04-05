@@ -1,34 +1,15 @@
 <?php 
 
-	// 1) We need to test for the current date.
-		
-	if (function_exists('mem_date_of_today')) {
-
-		$c12_date_of_today = mem_date_of_today();
-		
-		// echo $c12_date_of_today["today-now"];
-
-	} else {
-	// MEM plugin not active
-		$c12_date_of_today = '';
-	}
-	
-	// 2) Query for posts that have start_date in allowed range
-	
-	if (!empty($c12_date_of_today)) {
-			
-			$nfo_unix_year = (  1 * 1 * 24 * 60 * 60 );
-			
-			// check ID of current article:
+			// Check ID of current article:
 			$c12_item_id = get_the_ID();
 			
-			// 3) Check for transient
+			// 2) Check for transient
 			
 			if ( false === ( $c12_minical_events = get_transient( 'c12_minical_events' ) ) ) {
 			    
 			    // It wasn't there, so we generate the data and save the transient
 			    
-			    $c12_unix_now = $c12_date_of_today["unix"];
+			    $c12_unix_now = strtotime( date("Y-m-d") );
 			    $c12_unix_1day = ( 1 * 24 * 60 * 60 ); // 3 jours
 			    
 			    $c12_unix_yesterday = ( $c12_unix_now - $c12_unix_1day );
@@ -113,9 +94,6 @@
 			 wp_reset_postdata();
 			endif; 
 			
-			
-		
-	} // end testing if $c12_date_of_today is empty.
-	
+
 
  ?>
