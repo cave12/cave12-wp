@@ -22,6 +22,26 @@ if ( !is_admin() ) {
 	add_filter( 'pre_get_posts', 'cave12_include_future' );
 }
 
+/*
+ * Produce a permalink that works for future articles
+ * NOTE: may return in form of /?p=191
+*/
+
+function c12_future_permalink() {
+
+	// get_the_permalink() 
+	
+	$c12_future_permalink = get_home_url().'/';
+	
+	$c12_future_permalink .= get_post_field( 'post_name', $current_post_id ).'/';
+	
+	return $c12_future_permalink;
+
+}
+
+/*
+ * Build a "yesterday" timecode
+*/
 
 function c12_date_yesterday() {
 	

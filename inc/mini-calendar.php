@@ -69,7 +69,7 @@
 			  ?>
 					
 					<li class="mini-cal-box concert-no-<?php echo $current_post_id; ?>">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<a href="<?php echo c12_future_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php 
 						
 						$c12_item_day_nr = date( "d", $c12_item_date["start-unix"] );

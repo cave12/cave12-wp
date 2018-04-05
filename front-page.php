@@ -91,7 +91,7 @@ get_header(); ?>
 					} else { 
 					
 								echo '<div class="introduction entry-content">';
-								echo '<a href="'. get_the_permalink() .'" rel="bookmark" class="url description">';
+								echo '<a href="'. c12_future_permalink() .'" rel="bookmark" class="url description">';
 					      the_excerpt();
 					     	echo '</a></div>';
 					}
