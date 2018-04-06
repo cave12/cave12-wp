@@ -79,5 +79,43 @@ function tissParseHyperlinks($string) {
 
 
 
+function c12_archive_titles() {
+
+	if ( false === ( $c12_archive_titles = get_transient( 'c12_archive_titles' ) ) ) {
+	    
+	    // It wasn't there, so we generate the data and save the transient
+	
+	     $c12_archive_titles = new WP_Query( array(
+	     	'posts_per_page' => 55,
+	     	'post_type' => 'archive',
+	     	'orderby'  => 'name',
+	     	'order'  => 'ASC',
+	     	 	) ); 
+	     	 	
+	     	 	set_transient(
+	     	 		'c12_archive_titles', 
+	     	 		$c12_archive_titles, 
+	     	 		10 
+	     	 	); // 3 heures = 60*60*3
+	
+	} // end of get_transient test
+	
+	
+	if ( $c12_archive_titles->have_posts() ) : ?>
+	  <ul class="top-archive separateurs notc">
+	  <?php
+	  while( $c12_archive_titles->have_posts() ) : $c12_archive_titles->the_post(); 
+			
+			echo '<li><a href="'.get_the_permalink().'">';
+			echo get_the_title().'</a></li>';
+	
+		 endwhile; 
+	 	?></ul><?php
+	  wp_reset_postdata();
+	 endif; 
+
+}
+
+
 
 // end of functions.php

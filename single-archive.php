@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<div id="contenu" class="contenu">
+<div id="contenu" class="contenu archives">
 
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   
@@ -19,43 +19,13 @@ get_header(); ?>
     	<?php 
     	
     	// on crée une liste des archives
+    	    	
     	
-    	if ( false === ( $c12_archive_titles = get_transient( 'c12_archive_titles' ) ) ) {
-    	    
-    	    // It wasn't there, so we generate the data and save the transient
-    	
-    	     $c12_archive_titles = new WP_Query( array(
-    	     	'posts_per_page' => 55,
-    	     	'post_type' => 'archive',
-    	     	'orderby'  => 'name',
-    	     	'order'  => 'ASC',
-    	     	 	) ); 
-    	     	 	
-    	     	 	set_transient(
-    	     	 		'c12_archive_titles', 
-    	     	 		$c12_archive_titles, 
-    	     	 		10 
-    	     	 	); // 3 heures = 60*60*3
-    	
-    	} // end of get_transient test
-    	
-    	
-    	if ( $c12_archive_titles->have_posts() ) : ?>
-    	  <ul class="top-archive separateurs notc">
-    	  <?php
-    	  while( $c12_archive_titles->have_posts() ) : $c12_archive_titles->the_post(); 
-    			
-    			echo '<li><a href="'.get_the_permalink().'">';
-    			echo get_the_title().'</a></li>';
-    	
-    		 endwhile; 
-    	 	?></ul><?php
-    	  wp_reset_postdata();
-    	 endif; 
-    	 
+    	c12_archive_titles();
+
     	?>
     	
-      <h1 class="h1"><?php the_title(); ?></h1>
+      <h1 class="h1">archives <?php the_title(); ?></h1>
       
     </header>
   	

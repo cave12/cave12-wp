@@ -743,12 +743,21 @@ h3.titre-sommaire-h3,
 
 /* ----- ARCHIVES ----- */
 
-.top-archive {font-size:1.2em; padding: 0;}
-.rubr_archives .top-archive {font-size:2em; padding: 0;}
+.top-archive {
+	font-size:1.2em; 
+	padding: 0;
+}
 
-ul.top-archive {list-style-type:none;
-padding:0;
-margin:0 0 10px 0;
+.page-template-archives .top-archive,
+.rubr_archives .top-archive {
+	font-size:2em; 
+	padding: 0;
+}
+
+ul.top-archive {
+	list-style-type:none;
+	padding:0;
+	margin:0 0 10px 0;
 }
 ul.top-archive li {display:inline;}
 .top-archive a {text-decoration:none;}
@@ -757,21 +766,30 @@ ul.top-archive li {display:inline;}
 .contenu.archives {
 /*	padding:0;*/
 	}
+	
 .contenu.archives h1,
 #contenu.archives p {margin-left:10px;}
+
 .contenu.archives ul {
 	list-style-type:none;
 	padding:0;
 	margin:0 10px 30px 10px;}
+	
 .contenu.archives ul li {margin-bottom:20px;}
 .uppercase {text-transform:uppercase;}
 
 .separateurs li:after {
-	content:" | ";
+	content: " | ";
 }
 .separateurs li:last-child:after {
-	content:"";
+	content: "";
 }
+
+.page-template-archives .separateurs li:after {
+	content: " ";
+}
+
+
 
 /* @end */
 
