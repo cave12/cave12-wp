@@ -170,7 +170,7 @@ and (min-width : 1024px) {
 		
 		.mini-cal {
 			margin-top: 0.7em;
-			margin-left: 7em;
+			margin-left: 9.5em;
 			padding-right: 2em;
 /*			max-height: 3.3em;*/
 			font-size: 90%;
@@ -206,7 +206,7 @@ and (min-width : 1200px) {
 		
 		.mini-cal {
 			margin-top: 1.2em;
-			margin-left: 10em;
+			margin-left: 10.5em;
 /*			padding-right: 2em;*/
 /*			max-height: 3.3em;*/
 			font-size: 100%;
