@@ -8,14 +8,7 @@
 			if ( false === ( $c12_minical_events = get_transient( 'c12_minical_events' ) ) ) {
 			    
 			    // It wasn't there, so we generate the data and save the transient
-			    
-			    $c12_unix_now = strtotime( date("Y-m-d") );
-			    $c12_unix_1day = ( 1 * 24 * 60 * 60 ); // 3 jours
-			    
-			    $c12_unix_yesterday = ( $c12_unix_now - $c12_unix_1day );
-			    $c12_date_yesterday = date_i18n( "Y-m-d", $c12_unix_yesterday);
-			    
-			
+			    			
 			     $c12_minical_events = new WP_Query( array(
 			     	'posts_per_page' => 25,
 			     	'post_status' => array( 'publish', 'future' ),
@@ -28,7 +21,7 @@
 			     	'meta_query' => array(
 			     			array(
 			     				'key'     => '_mem_start_date',
-			     				'value'   => $c12_date_yesterday,
+			     				'value'   => c12_date_yesterday(),
 			     				'compare' => '>=',
 			     			),
 			     	),

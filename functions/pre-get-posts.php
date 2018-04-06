@@ -74,13 +74,11 @@ function cave12_frontpage_concerts( $query ) {
       				'inclusive' => true,
       			),
         	));
-        	
-        	$c12_date_yesterday = c12_date_yesterday();
-        	
+        	        	
         	$query->set('meta_query', array(
         			array(
         				'key'     => '_mem_start_date',
-        				'value'   => $c12_date_yesterday,
+        				'value'   => c12_date_yesterday(),
         				'compare' => '>=',
         			),
         	));
