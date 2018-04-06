@@ -57,7 +57,7 @@ get_header(); ?>
 			    	      echo '';
 			    	} else { 
 			    	
-			    				echo '<div id="chapo" class="description">';
+			    				echo '<div id="chapo" class="description chapo">';
 			    	      the_excerpt();
 			    	     	echo '</div>';
 			    	}

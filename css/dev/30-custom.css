@@ -313,6 +313,15 @@ h1.site-title,
 .contenu p.descr {
 	padding:0;margin:0;
 }
+
+.description br.autobr {
+	display: none;
+}
+
+.contenu .description p:first-of-type br {
+	line-height: 2.25;
+}
+
 .contenu p {
 	line-height: 1.25;
 	
@@ -622,9 +631,15 @@ h3.titre-sommaire-h3,
 	color:#303030;
 	text-decoration:none;
 }
-#contenu div.art-sommaire p {
-	padding:0;margin:0;
+.contenu div.art-sommaire p {
+	padding:0;
+	margin:0;
+	margin-bottom: 0.75em;
 }
+.contenu div.art-sommaire p:last-of-type {
+	margin-bottom: 0;
+}
+
 .contenu div.art-box :focus {
 	outline: 0;
 }
