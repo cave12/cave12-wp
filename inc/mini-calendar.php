@@ -28,7 +28,7 @@
 			     	'orderby'  => 'meta_value',
 			     	'order'  => 'ASC',
 			     //'cat' => '10,12,13,14,18', 
-			     	 	) ); 
+			     	) ); 
 			     	 	
 			     	 	set_transient(
 			     	 		'c12_minical_events', 

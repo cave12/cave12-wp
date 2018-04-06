@@ -33,7 +33,7 @@ function c12_future_permalink() {
 	
 	$c12_future_permalink = get_home_url().'/';
 	
-	$c12_future_permalink .= get_post_field( 'post_name', $current_post_id ).'/';
+	$c12_future_permalink .= get_post_field( 'post_name', get_the_ID() ).'/';
 	
 	return $c12_future_permalink;
 
