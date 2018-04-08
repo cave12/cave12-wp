@@ -2,44 +2,10 @@
 
 			// Check ID of current article:
 			$c12_item_id = get_the_ID();
+		
+			$c12_minical_events = c12_concerts();
 			
-			// 2) Check for transient
-			
-			if ( false === ( $c12_minical_events = get_transient( 'c12_minical_events' ) ) ) {
-			    
-			    // It wasn't there, so we generate the data and save the transient
-			    			
-			     $c12_minical_events = new WP_Query( array(
-			     	'posts_per_page' => 25,
-			     	'post_status' => array( 'publish', 'future' ),
-			     	'date_query' => array(
-			     		array(
-			     			'after'     => date('Y-m-d', strtotime('-60 days')),
-			     			'inclusive' => true,
-			     		),
-			     	),
-			     	'meta_query' => array(
-			     			array(
-			     				'key'     => '_mem_start_date',
-			     				'value'   => c12_date_yesterday(),
-			     				'compare' => '>=',
-			     			),
-			     	),
-			     	'orderby'  => 'meta_value',
-			     	'order'  => 'ASC',
-			     //'cat' => '10,12,13,14,18', 
-			     	) ); 
-			     	 	
-			     	 	set_transient(
-			     	 		'c12_minical_events', 
-			     	 		$c12_minical_events, 
-			     	 		60*60*3
-			     	 	); // 3 heures = 60*60*3 secondes
-			
-			} // end of get_transient test
-			
-			// 4) We have defined $c12_minical_events
-			// - now, generate output
+			// Generate output:
 			
 			if ( $c12_minical_events->have_posts() ) : ?>
 			  
@@ -96,7 +62,5 @@
 				
 			 wp_reset_postdata();
 			endif; 
-			
-
 
  ?>

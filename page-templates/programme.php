@@ -1,7 +1,9 @@
 <?php
 /**
- * @package    WordPress
- * @subpackage HTML5_Boilerplate
+ * Template Name: Programme
+ *
+ * Description: Programme des concerts
+ *
  */
 
 get_header(); ?>
@@ -9,32 +11,34 @@ get_header(); ?>
 <div id="contenu" class="contenu vcalendar" role="main">
 
 	<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 	
 	<div id="propaganda" class="propaganda">
 	
 	<div id="titre-sommaire" class="titre-sommaire notc">
-		<h3 class="titre-sommaire-h3">PROGRAMME</h3>
+		<h3 class="titre-sommaire-h3"><?php the_title(); ?></h3>
 	</div>
 	
 	<div id="programme-pdf" class="programme-pdf prop-item">
-			<a href="http://cave12.org/IMG/pdf/cave12_octobre_14_v3.1.pdf" title="Télécharger &ndash; 241.7 ko" type="application/pdf"  target="_blank" class="prop-item-label">.pdf</a>
-				
-		</div>
-	
-	<div id="mailing-list" class="newsletter-form prop-item">
-		<label for="email" class="inco prop-item-label">Newsletter</label>
-		<form action="http://admin.cave12.org/mail/mailinglist_process.php" method='post' name='formulaire' class="inco">
-		<input type='hidden' name='maillist' value="aW5mb3JtYXppb25AY2F2ZTEyLm9yZw==" />
-		<input type='email' id="email" name='email' placeholder='votre email' class="form-text inco" required>
-		<input type='hidden' name='action' value="add">
-		<input type='hidden' name='url' value="http://cave12.org/spip.php?article26">
-		<input type='submit' name='add' value="s’abonner" class="button inco">
-		</form>
+		<a href="http://cave12.org/IMG/pdf/cave12_octobre_14_v3.1.pdf" title="Télécharger &ndash; 241.7 ko" type="application/pdf"  target="_blank" class="prop-item-label">.pdf</a>
 	</div>
+	
+	<?php c12_mailing_signup(); ?>
 	
 	</div><!--#propaganda-->
 	
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php 
+	
+	endwhile;
+	endif;
+
+	// Concerts
+	
+	 $c12_concerts = c12_concerts();
+	
+	if ( $c12_concerts->have_posts() ) : ?>
+	  <?php
+	  while( $c12_concerts->have_posts() ) : $c12_concerts->the_post(); ?>
 			
 			<?php 
 			
@@ -50,7 +54,6 @@ get_header(); ?>
 			}
 			
 			// classes: recent / demain / futur
-			
 			// 
 			
 			 ?>
@@ -101,20 +104,14 @@ get_header(); ?>
 				</div>
 				
 			</article>
-
-		<?php endwhile; ?>
-
-	<?php else : ?>
-
-		<h2 class="h2">Not Found</h2>
-		<p>Sorry, but you are looking for something that isn't here.</p>
-		<?php get_search_form(); ?>
-
-	<?php endif; ?>
+	
+	<?php
+		 endwhile; 
+	  wp_reset_postdata();
+	 endif; 
+	
+	 ?>
 
 </div><!--#contenu-->
 
-
 <?php get_footer(); ?>
-
-

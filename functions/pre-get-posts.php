@@ -55,39 +55,3 @@ function c12_date_yesterday() {
 	
 }
 
-/*
- * Change query for front page
- *
-******************************/
-
-function cave12_frontpage_concerts( $query ) {
-            
-        if ( $query->is_home() && $query->is_main_query() ) {
-        	
-        	$query->set('posts_per_page', -1);
-        	
-        	$query->set('post_status', array( 'publish', 'future' ));
-        	
-        	$query->set('date_query', array(
-      			array(
-      				'after'     => date('Y-m-d', strtotime('-60 days')),
-      				'inclusive' => true,
-      			),
-        	));
-        	        	
-        	$query->set('meta_query', array(
-        			array(
-        				'key'     => '_mem_start_date',
-        				'value'   => c12_date_yesterday(),
-        				'compare' => '>=',
-        			),
-        	));
-        	
-        	$query->set('order', 'ASC');
-        	$query->set('orderby', 'meta_value');
-        	
-        	return $query;
-					
-        }
-}
-add_filter( 'pre_get_posts', 'cave12_frontpage_concerts' );

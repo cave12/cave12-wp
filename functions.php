@@ -78,6 +78,42 @@ function tissParseHyperlinks($string) {
 }
 
 
+function c12_concerts() {
+	
+	if ( false === ( $c12_concerts = get_transient( 'c12_concert_query' ) ) ) {
+	    
+	 	$c12_concerts = new WP_Query( array(
+ 			'posts_per_page' => 42,
+ 			'post_status' => array( 'publish', 'future' ),
+ 			'date_query' => array(
+ 				array(
+ 					'after'     => date('Y-m-d', strtotime('-60 days')),
+ 					'inclusive' => true,
+ 				),
+ 			),
+ 			'meta_query' => array(
+ 					array(
+ 						'key'     => '_mem_start_date',
+ 						'value'   => c12_date_yesterday(),
+ 						'compare' => '>=',
+ 					),
+ 			),
+ 			'orderby'  => 'meta_value',
+ 			'order'  => 'ASC',
+	 	) ); 
+	 	 	
+	 	set_transient(
+	 		'c12_concert_query', 
+	 		$c12_concerts, 
+	 		120 
+	 	); // heures = 60*60*N
+	
+	} // end of get_transient test
+	
+	return $c12_concerts;
+	
+}
+
 
 function c12_archive_titles() {
 
@@ -117,5 +153,24 @@ function c12_archive_titles() {
 }
 
 
+/* Newsletter Signup Form
+******************************/
+
+function c12_mailing_signup() {
+
+	?>
+	<div id="mailing-list" class="newsletter-form prop-item">
+		<label for="email" class="inco prop-item-label">Newsletter</label>
+		<form action="http://admin.cave12.org/mail/mailinglist_process.php" method='post' name='formulaire' class="inco">
+		<input type='hidden' name='maillist' value="aW5mb3JtYXppb25AY2F2ZTEyLm9yZw==" />
+		<input type='email' id="email" name='email' placeholder='votre email' class="form-text inco" required>
+		<input type='hidden' name='action' value="add">
+		<input type='hidden' name='url' value="http://cave12.org/spip.php?article26">
+		<input type='submit' name='add' value="s’abonner" class="button inco">
+		</form>
+	</div>
+	<?php
+	
+}
 
 // end of functions.php

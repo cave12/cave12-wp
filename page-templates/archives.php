@@ -2,7 +2,7 @@
 /**
  * Template Name: Archives
  *
- * Description: Archives Index
+ * Description: Index des archives
  *
  */
 
