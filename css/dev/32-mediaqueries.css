@@ -1,6 +1,8 @@
 /* @group Media Queries */
 
-/* Smartphones (landscape) ----------- */
+/* Smartphones (landscape) ----------- 
+ * Menu is moved to sidebar
+*/
 @media only screen 
 and (min-width : 740px) {
 			
@@ -45,6 +47,10 @@ and (min-width : 740px) {
 			top:  82px;
 		} 
 		
+		.bloc-navig ul {
+			margin-bottom: 1em;
+		}
+		
 		.bloc-navig ul li {
 			
 			margin-right: 0;
@@ -56,6 +62,8 @@ and (min-width : 740px) {
 			border: 0px;
 			padding: 0;
 		}
+		
+		
 	
 		ul.navigation-top {
 			border-top: 0;

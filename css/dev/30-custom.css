@@ -1050,11 +1050,8 @@ a.ar-co-pre {
 }
 
 .bloc-navig ul {
-	padding: 0;
-	margin: 0.4em 1em;
-	
-	margin: 0.6em 1em;
-	
+	padding: 0;	
+	margin: 0.6em 1em 0 1em;
 	font-size: 110%;
 	clear: left;
 	float: left;
@@ -1074,8 +1071,7 @@ ul.navigation-top {
 	
 	float: left;
 	margin-right: 0.4em;
-	margin-bottom: 0.4em;
-/*	clear: left;*/
+	margin-bottom: 1em;
 	}
 	
 .bloc-navig li a {

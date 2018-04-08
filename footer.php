@@ -47,14 +47,6 @@
 				<li><a href="http://www.ville-ge.ch/culture/prixVdG11/laureat_musique.html" class="prix-ville-geneve" target="_blank">prix 2011 de la ville de genève</a></li>
 			</ul>
 			
-			<ul role="navigation" class="navigation">
-			
-			<li><a href="http://rss.cave12.org/cave12" title="S'abonner au RSS" rel="alternate" type="application/rss+xml">RSS</a></li>
-			<li><a href="webcal://cave12.org/cave12.ics" title="S'abonner au calendrier">ical</a></li>
-			<li class="nav-search"><INCLURE{fond=inc-recherche}></li>
-			</ul>
-		
-		
 		</div><!--#pied-->
   
 </div><!--#page-->
