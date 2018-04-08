@@ -92,7 +92,8 @@ remove_filter( 'atom_service_url', 'atom_service_url_filter' );
 
 /* Theme Support
 ******************************/
-function tabula_rasa_setup() {
+
+function c12_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 //     set_post_thumbnail_size( 150, 150 ); // default Post Thumbnail dimensions  
 	// more info: http://codex.wordpress.org/Post_Thumbnails
@@ -112,8 +113,11 @@ function tabula_rasa_setup() {
 		'gallery', // since 3.9
 		'caption'  // since 3.9
 	) );
+	
+	add_theme_support( 'title-tag' );
+	
 }
-add_action( 'after_setup_theme', 'tabula_rasa_setup' );
+add_action( 'after_setup_theme', 'c12_theme_setup' );
 
 
 /* Custom image sizes
