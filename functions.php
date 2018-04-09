@@ -15,6 +15,14 @@ require_once( 'functions/acf.php' );
 
 require_once( 'functions/pre-get-posts.php' );
 
+/* admin interface
+******************************/
+
+if ( is_user_logged_in() ) {
+		require_once('functions/admin.php');
+}
+
+
 
 /* login interface
 ******************************/
@@ -42,12 +50,6 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
-/* admin interface
-******************************/
-
-if ( is_user_logged_in() ) {
-		require_once('functions/admin.php');
-}
 
 /* turn links into hyperlinks
 ******************************/
@@ -198,6 +200,7 @@ function c12_programme_pdf() {
 	*/
 
 }
+
 
 
 // end of functions.php

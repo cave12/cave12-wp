@@ -10,18 +10,14 @@
 		<meta charset="utf-8">
 		
 		<?php wp_head(); ?>
+		
+		<style>.hidden {display: none;}</style>
 
 		<!-- Mobile viewport optimized: h5bp.com/viewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
-		
-		<style>.hidden {display: none;}</style>
 
-		<!-- Wordpress Head Items -->
-		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		
 		<link rel="profile" href="http://microformats.org/profile/hcalendar">
 
 	</head>
