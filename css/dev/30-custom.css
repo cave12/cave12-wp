@@ -793,7 +793,8 @@ ul.top-archive li {display:inline;}
 
 /* @end */
 
-.page-id-24 img,
+.soutiens img,
+.page-id-1697 img,
 .rubrique_liens_soutiens img {
 	display: block;
 	float: left;
@@ -805,7 +806,7 @@ ul.top-archive li {display:inline;}
 	border: 4px double #d0d0d0;
 }
 
-.page-id-24 .entry-content  p:last-of-type,
+.page-id-1697 .entry-content  p:last-of-type,
 .rubrique_liens_soutiens .entry-content  p:last-of-type {
 	float: left;
 	width: 100%;

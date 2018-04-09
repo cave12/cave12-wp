@@ -32,8 +32,8 @@ get_header(); ?>
 
 	// Concerts
 	
-	 $c12_concerts = c12_concerts();
-	
+	$c12_concerts = c12_concerts();
+		
 	if ( $c12_concerts->have_posts() ) : ?>
 	  <?php
 	  while( $c12_concerts->have_posts() ) : $c12_concerts->the_post(); ?>
