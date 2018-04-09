@@ -170,4 +170,34 @@ function c12_mailing_signup() {
 	
 }
 
+/* Newsletter Signup Form
+******************************/
+
+function c12_programme_pdf() {
+
+	// Get ACF custom field c12_programme_pdf
+	
+	if ( function_exists('get_field')) {
+	
+    $file = get_field('c12_programme_pdf');
+    if ($file) {
+      ?>
+      <div id="programme-pdf" class="programme-pdf prop-item">
+        <a target="_blank" href="<?php 
+          echo $file['url']; ?>" title=" Télécharger <?php 
+          echo $file['title']; ?>" type="application/pdf" class="prop-item-label">.pdf</a>
+			</div>
+      <?php 
+    } // end if file
+	}
+	
+	/*
+	
+	<a href="http://cave12.org/IMG/pdf/cave12_octobre_14_v3.1.pdf" title="Télécharger &ndash; 241.7 ko"   target="_blank" ></a>
+	
+	*/
+
+}
+
+
 // end of functions.php
