@@ -19,9 +19,7 @@ get_header(); ?>
 		<h3 class="titre-sommaire-h3"><?php the_title(); ?></h3>
 	</div>
 	
-	<div id="programme-pdf" class="programme-pdf prop-item">
-		<a href="http://cave12.org/IMG/pdf/cave12_octobre_14_v3.1.pdf" title="Télécharger &ndash; 241.7 ko" type="application/pdf"  target="_blank" class="prop-item-label">.pdf</a>
-	</div>
+	<?php c12_programme_pdf(); ?>
 	
 	<?php c12_mailing_signup(); ?>
 	

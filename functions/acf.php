@@ -1,9 +1,21 @@
 <?php 
 
-// ACF Setup for Cave12
+/* ACF Setup for Cave12
+ *
+ * Adds the following field groups:
+ *
+ * 1) Photos et affiches
+ * 2) Sur-titre
+ * 3) Programme PDF
+ *
+*/
 
 
 if( function_exists('acf_add_local_field_group') ):
+
+/*
+ * Photos et affiches
+*/
 
 acf_add_local_field_group(array(
 	'key' => 'group_5480105b67137',
@@ -80,6 +92,10 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 
+/*
+ * Sur-titre
+*/
+
 acf_add_local_field_group(array(
 	'key' => 'group_548010917decc',
 	'title' => 'Sur-titre',
@@ -130,4 +146,52 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 
+/*
+ * Programme PDF
+*/
+
+acf_add_local_field_group(array(
+	'key' => 'group_5acb27ae615d1',
+	'title' => 'Programme PDF',
+	'fields' => array(
+		array(
+			'key' => 'field_5acb27b6fd8c5',
+			'label' => 'Programme actuel PDF',
+			'name' => 'c12_programme_pdf',
+			'type' => 'file',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'library' => 'all',
+			'min_size' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'page-templates/programme.php',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
+
 endif;
+
