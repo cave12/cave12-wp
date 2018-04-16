@@ -160,13 +160,14 @@ function c12_mailing_signup() {
 	?>
 	<div id="mailing-list" class="newsletter-form prop-item">
 		<label for="email" class="inco prop-item-label">Newsletter</label>
-		<form action="http://admin.cave12.org/mail/mailinglist_process.php" method='post' name='formulaire' class="inco">
-		<input type='hidden' name='maillist' value="aW5mb3JtYXppb25AY2F2ZTEyLm9yZw==" />
-		<input type='email' id="email" name='email' placeholder='votre email' class="form-text inco" required>
-		<input type='hidden' name='action' value="add">
-		<input type='hidden' name='url' value="http://cave12.org/spip.php?article26">
-		<input type='submit' name='add' value="s’abonner" class="button inco">
+		<form action="https://manager.infomaniak.com/public/mail/mailinglist_process.php" method="post">
+		<input type="hidden" name="maillist" value="aW5mb3JtYXppb25AY2F2ZTEyLm9yZw=="/>
+		<input type="hidden" name="action" value="add" />
+		<input type="hidden" name="url" value="https://www.cave12.org/inscription-reussie/" />
+		<input type="email" id="email" name="email" placeholder='votre email' class="form-text inco" required />
+		<input type="submit" name="add" value="s’abonner" class="button inco" />
 		</form>
+		
 	</div>
 	<?php
 	
