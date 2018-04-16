@@ -43,6 +43,16 @@ function c12_future_permalink() {
  * Build a "yesterday" timecode
 */
 
+function c12_date_today() {
+	
+	$c12_unix_now = strtotime( date("Y-m-d") );
+	
+	$c12_date_today = date_i18n( "Y-m-d", $c12_unix_now);
+	
+	return $c12_date_today;
+	
+}
+
 function c12_date_yesterday() {
 	
 	$c12_unix_now = strtotime( date("Y-m-d") );

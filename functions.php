@@ -96,7 +96,7 @@ function c12_concerts() {
  			'meta_query' => array(
  					array(
  						'key'     => '_mem_start_date',
- 						'value'   => c12_date_yesterday(),
+ 						'value'   => c12_date_today(),
  						'compare' => '>=',
  					),
  			),
@@ -126,12 +126,12 @@ function c12_archive_titles() {
 	   	'post_type' => 'archive',
 	   	'orderby'  => 'name',
 	   	'order'  => 'ASC',
-   	) ); 
+   	) );
    	 	
  	 	set_transient(
  	 		'c12_archive_titles', 
  	 		$c12_archive_titles, 
- 	 		60*60*24 
+ 	 		120 
  	 	); // heures = 60*60*N
 	
 	} // end of get_transient test
