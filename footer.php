@@ -61,7 +61,7 @@
 	piwikTracker.trackPageView();
 	piwikTracker.enableLinkTracking();
 	} catch( err ) {}
-	</script><noscript><p><img src="http://www.cave12.org/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+	</script><noscript><p><img src="https://www.cave12.org/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
 	<!-- End Piwik Tracking Code -->
 
   <?php wp_footer(); ?>

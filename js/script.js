@@ -182,7 +182,7 @@ function loadGmapScriptAjax() {
 	// alert('locCaveLa:'+ locCaveLat);
 	var script = document.createElement("script");
 	script.type = "text/javascript";
-	script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCEJxiLc0qlowfZNYGcm7Hz2OXMvobK6mE&sensor=false&callback=initialize";
+	script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCEJxiLc0qlowfZNYGcm7Hz2OXMvobK6mE&sensor=false&callback=initialize";
 	document.body.appendChild(script);
 }
 
@@ -191,6 +191,6 @@ function loadGmapScriptLocal() {
 	// alert ('c12vars loaded:  '+ locCaveLat);
 	var script = document.createElement("script");
 	script.type = "text/javascript";
-	script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCEJxiLc0qlowfZNYGcm7Hz2OXMvobK6mE&sensor=false&callback=initialize";
+	script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCEJxiLc0qlowfZNYGcm7Hz2OXMvobK6mE&sensor=false&callback=initialize";
 	document.body.appendChild(script);
 }
