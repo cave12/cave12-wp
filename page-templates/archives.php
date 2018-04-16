@@ -16,7 +16,7 @@ get_header(); ?>
    
    	<div class="surlignable">
    	
-    <header>
+    <header class="archive-titles">
 			<?php 
 			
 			c12_archive_titles();
