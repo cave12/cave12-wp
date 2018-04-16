@@ -32,7 +32,11 @@ get_header(); ?>
 
 	// Concerts
 	
+	// function c12_concerts() in: functions.php
+	
 	$c12_concerts = c12_concerts();
+	
+	$c12_date_now = strtotime("now");
 		
 	if ( $c12_concerts->have_posts() ) : ?>
 	  <?php
@@ -50,13 +54,34 @@ get_header(); ?>
 				);
 			
 			}
+
+			$c12_post_class = 'art-box vevent';
 			
-			// classes: recent / demain / futur
-			// 
+			if ($mem_date) {
+
+				if ( $mem_date["start-unix"] < $c12_date_now ) {
+				
+					$c12_post_class .= ' recent';
+				
+				} else {
+				
+					if ( ( $mem_date["start-unix"] - $c12_date_now ) < ( 432000 ) ) {
+					
+					// 432000 = 5 jours
+					
+						$c12_post_class .= ' demain';
+					
+					} else {
+					
+						$c12_post_class .= ' futur';
+					
+					}
+				}
+			}
 			
 			 ?>
 			 
-			 <article <?php post_class('art-box vevent') ?> id="post-<?php the_ID(); ?>">
+			 <article <?php post_class( $c12_post_class ) ?> id="post-<?php the_ID(); ?>">
 			 
 			 <?php 
 			 
