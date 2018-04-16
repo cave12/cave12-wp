@@ -29,7 +29,7 @@ get_header(); ?>
       
     </header>
   	
-    <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+    <?php the_content(); ?>
     
     <?php 
     
@@ -43,24 +43,31 @@ get_header(); ?>
         // It wasn't there, so we generate the data and save the transient
         $c12_archive_year_start = $c12_archive_slug;
         $c12_archive_year_end = $c12_archive_slug.'-12-32';
+        
+        if ( $c12_archive_slug == date("Y") ) {
+        
+        	// Exception: the year is the CURRENT year, so stop at present date (don't show future concerts).
+        
+        	$c12_archive_year_end = date("Y-m-d");
+        
+        }
     
-         $c12_archive_year = new WP_Query( array(
-         	'posts_per_page' => 999,
-         	'meta_key' => '_mem_start_date',
-         	'meta_value'	=> array( 
-         			$c12_archive_year_start, 
-         			$c12_archive_year_end ),
-         	'meta_compare'	=> 'BETWEEN',
-         	'orderby'  => 'meta_value',
-         	'order'  => 'ASC',
-         //'cat' => '10,12,13,14,18', 
-         	 	) ); 
-         	 	
-         	 	set_transient(
-         	 		'c12_archive_year_'.$c12_archive_slug, 
-         	 		$c12_archive_year, 
-         	 		10 
-         	 	); // 3 heures = 60*60*3
+       $c12_archive_year = new WP_Query( array(
+       	'posts_per_page' => 999,
+       	'meta_key' => '_mem_start_date',
+       	'meta_value'	=> array( 
+       			$c12_archive_year_start, 
+       			$c12_archive_year_end ),
+       	'meta_compare'	=> 'BETWEEN',
+       	'orderby'  => 'meta_value',
+       	'order'  => 'ASC',
+       	 	) ); 
+       	 	
+     	 	set_transient(
+     	 		'c12_archive_year_'.$c12_archive_slug, 
+     	 		$c12_archive_year, 
+     	 		120 
+     	 	); // 3 heures = 60*60*3
     
     } // end of get_transient test
     
@@ -110,6 +117,12 @@ get_header(); ?>
       endwhile; 
     	
     	?></ul><?php
+    	
+    	// Montrer nombre de concerts:
+    	
+    	echo '<p>'.$c12_archive_year->found_posts ; 
+    	echo ' concerts ont eu lieu en '.$c12_archive_slug;
+    	echo '.</p>';
     	
      wp_reset_postdata();
     endif; 
