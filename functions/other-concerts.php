@@ -10,6 +10,7 @@ function c12_other_concerts() {
 		*/
 		
 		$posttags = get_the_tags();
+		$current_post_id = get_the_ID();
 		
 		if (empty($posttags)) {
 			return;
@@ -20,7 +21,7 @@ function c12_other_concerts() {
 		foreach( $posttags as $tag ) {
 			
 			if ( 1 >= $tag->count ) {
-				break;
+    		continue;
 			}
 			
 			$html .='<hr class="divider" />';
@@ -28,7 +29,7 @@ function c12_other_concerts() {
 			$html .= get_tag_link($tag->term_id);
 			$html .='" class="nom-artiste">'; 
 			$html .= $tag->name;
-			$html .='</a> à la cave12 ('.$tag->count.'):</p>';
+			$html .='</a> à la cave12:</p>';
 	
 			// Query for other posts linked to this Tag
 			// & Exclude current post.
@@ -37,6 +38,7 @@ function c12_other_concerts() {
 				'posts_per_page' => 99,
 				'tag_id' => $tag->term_id,
 				'order'  => 'ASC',
+				'post__not_in' => array( $current_post_id )
 			) );
 			
 			if ( $c12_other_concerts->have_posts() ) :   
