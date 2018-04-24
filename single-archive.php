@@ -80,15 +80,8 @@ get_header(); ?>
       while( $c12_archive_year->have_posts() ) : $c12_archive_year->the_post(); 
       
     			$current_post_id = get_the_ID();
-    			
-    			if ( function_exists( 'mem_date_processing' ) ) {
-    			
-	    	  	$mem_date = mem_date_processing( 
-	    	  		get_post_meta($current_post_id, '_mem_start_date', true) , 
-	    	  		get_post_meta($current_post_id, '_mem_end_date', true)
-	    	  	);
-    	  	
-    	  	}
+
+    	  	$mem_date = c12_date($current_post_id);
       
       ?>
     		

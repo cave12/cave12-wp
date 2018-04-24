@@ -116,6 +116,20 @@ function c12_concerts() {
 	
 }
 
+function c12_date($postID) {
+
+	$mem_date = '';
+	if ( function_exists( 'mem_date_processing' ) ) {
+		$mem_date = mem_date_processing( 
+			get_post_meta($postID, '_mem_start_date', true) , 
+			get_post_meta($postID, '_mem_end_date', true)
+		);
+	}
+	
+	return $mem_date;
+
+}
+
 
 function c12_archive_titles() {
 

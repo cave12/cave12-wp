@@ -14,16 +14,7 @@ get_header(); ?>
 			
 			<?php
 			
-			$mem_date = '';
-			
-			if ( function_exists( 'mem_date_processing' ) ) {
-			
-				$mem_date = mem_date_processing( 
-					get_post_meta($post->ID, '_mem_start_date', true) , 
-					get_post_meta($post->ID, '_mem_end_date', true)
-				);
-				
-			}
+			$mem_date = c12_date($post->ID);
 			
 			if ( $mem_date ) { 
 			    	 
