@@ -70,9 +70,13 @@ get_header(); ?>
 //			the_content( 'Read the rest of this entry &raquo;' ); 
 			
 			?>
-			</div>
 			
+	<?php 
+	
+	echo c12_other_concerts();
 
+	 ?>
+	</div><!-- .programme-txt -->
 	<?php endwhile;
 	else: ?>
 

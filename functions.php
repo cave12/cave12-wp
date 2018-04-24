@@ -15,6 +15,8 @@ require_once( 'functions/acf.php' );
 
 require_once( 'functions/pre-get-posts.php' );
 
+require_once( 'functions/other-concerts.php' );
+
 /* admin interface
 ******************************/
 
