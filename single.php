@@ -45,12 +45,12 @@ get_header(); ?>
 			    	<?php 
 			    	
 			    	if ( ! has_excerpt() ) {
-			    	      echo '';
+	    	      echo '';
 			    	} else { 
 			    	
-			    				echo '<div id="chapo" class="description chapo">';
-			    	      the_excerpt();
-			    	     	echo '</div>';
+	    				echo '<div id="chapo" class="description chapo">';
+	    	      the_excerpt();
+	    	     	echo '</div>';
 			    	}
 			    	
 			    	 ?>	
