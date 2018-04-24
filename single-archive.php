@@ -19,7 +19,6 @@ get_header(); ?>
     	<?php 
     	
     	// on crée une liste des archives
-    	    	
     	
     	c12_archive_titles();
 
@@ -87,16 +86,11 @@ get_header(); ?>
     		
     			<li>
     				<?php 
-    				
-    				if ( ! has_excerpt() ) {
-    				      echo '';
-    				} else { 
-    				
-//    							echo '<strong>';
-//    				      the_excerpt();
-//    				     	echo '</strong><br/>';
-    				}
-    				
+    				// Test for ACF field "La cave12 à l’Ecurie 'c12_surtitre'
+    				if ( get_post_meta( get_the_ID(), 'c12_surtitre', true ) ) : ?>
+								<strong><?php echo get_post_meta( get_the_ID(), 'c12_surtitre', true ); ?></strong><br/>
+    				<?php endif;
+    				    				
     				 ?>
     			  <span class="date"><?php 
     			  
