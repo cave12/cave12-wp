@@ -210,6 +210,19 @@ function c12_programme_pdf() {
 	
 }
 
+/* 
+ * Custom NOINDEX rules
+ * For : sommaire-top, desinscription-reussie
+*/
+
+function cave12_noindex() {
+	// your custom condition
+	if ( is_page( 'desinscription' )  ) {
+		wp_no_robots();
+	}
+		
+}
+add_action( 'wp_head', 'cave12_noindex', 1 );
 
 
 // end of functions.php
