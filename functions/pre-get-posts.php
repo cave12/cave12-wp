@@ -3,9 +3,18 @@
 /*
 * Pre-Get Posts
 * Change display of posts loop
+* Number of posts in archive pages
  */
- 
- 
+
+function c12_archive_pages( $query ) {
+
+  if ( $query->is_archive() ) {
+  	$query->set( 'posts_per_page', 42);
+  }
+
+}
+add_filter( 'pre_get_posts', 'c12_archive_pages' );
+
 
 /*
  * Show Scheduled articles:
