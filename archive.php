@@ -68,12 +68,17 @@ get_header(); ?>
 						<h3 id="post-<?php the_ID(); ?>">
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 						</h3>
-						<time datetime="<?php the_time( 'Y-m-d' ) ?>"><?php the_time( 'l, F jS, Y' ) ?></time>
+						<?php
+							$mem_date = c12_date( get_the_ID() );
+						?>
+						<time datetime="<?php 
+						echo date_i18n( "Y-m-d", $mem_date["start-unix"]) 
+						?>"><?php 
+						// the_time( 'l, F jS, Y' );
+						echo date_i18n( "j F Y", $mem_date["start-unix"]) 
+						?></time>
 					</header>
 					<?php // the_content() ?>
-					<footer>
-						<?php the_tags( 'Tags: ', ', ', '<br />' ); ?>
-					</footer>
 				</article>
 			<?php endwhile; ?>
 
