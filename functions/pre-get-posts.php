@@ -14,8 +14,8 @@
 ******************************/
 
 function cave12_include_future( $query ) {
-    if ( $query->is_date() || $query->is_single() )
-        $GLOBALS[ 'wp_post_statuses' ][ 'future' ]->public = true;
+  if ( $query->is_date() || $query->is_single() )
+    $GLOBALS[ 'wp_post_statuses' ][ 'future' ]->public = true;
 }
 
 if ( !is_admin() ) {
@@ -31,11 +31,11 @@ function c12_future_permalink() {
 
 	// get_the_permalink() 
 	
-	$c12_future_permalink = get_home_url().'/';
+	$link = get_home_url().'/';
 	
-	$c12_future_permalink .= get_post_field( 'post_name', get_the_ID() ).'/';
+	$link .= get_post_field( 'post_name', get_the_ID() ).'/';
 	
-	return $c12_future_permalink;
+	return $link;
 
 }
 
@@ -45,23 +45,23 @@ function c12_future_permalink() {
 
 function c12_date_today() {
 	
-	$c12_unix_now = strtotime( date("Y-m-d") );
+	$now = strtotime( date("Y-m-d") );
 	
-	$c12_date_today = date_i18n( "Y-m-d", $c12_unix_now);
+	$today = date_i18n( "Y-m-d", $now);
 	
-	return $c12_date_today;
+	return $today;
 	
 }
 
 function c12_date_yesterday() {
 	
-	$c12_unix_now = strtotime( date("Y-m-d") );
-	$c12_unix_1day = ( 1 * 24 * 60 * 60 ); // 3 jours
+	$now = strtotime( date("Y-m-d") );
+	$day = 86400; // ( 24 * 60 * 60 )
 	
-	$c12_unix_yesterday = ( $c12_unix_now - $c12_unix_1day );
-	$c12_date_yesterday = date_i18n( "Y-m-d", $c12_unix_yesterday);
+	$yesterday = ( $now - $day );
+	$yesterday = date_i18n( "Y-m-d", $yesterday);
 	
-	return $c12_date_yesterday;
+	return $yesterday;
 	
 }
 

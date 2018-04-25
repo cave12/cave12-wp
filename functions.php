@@ -25,7 +25,6 @@ if ( is_user_logged_in() ) {
 }
 
 
-
 /* login interface
 ******************************/
 
@@ -53,7 +52,7 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
 
-/* turn links into hyperlinks
+/* Turn links into hyperlinks
 ******************************/
 
 function tiss_process_hyperlinks($tiss_content) {
@@ -96,11 +95,11 @@ function c12_concerts() {
  				),
  			),
  			'meta_query' => array(
- 					array(
- 						'key'     => '_mem_start_date',
- 						'value'   => c12_date_today(),
- 						'compare' => '>=',
- 					),
+				array(
+					'key'     => '_mem_start_date',
+					'value'   => c12_date_today(),
+					'compare' => '>=',
+				),
  			),
  			'orderby'  => 'meta_value',
  			'order'  => 'ASC',
@@ -167,7 +166,6 @@ function c12_archive_titles() {
 
 }
 
-
 /* Newsletter Signup Form
 ******************************/
 
@@ -189,7 +187,7 @@ function c12_mailing_signup() {
 	
 }
 
-/* Newsletter Signup Form
+/* Output monthly PDF
 ******************************/
 
 function c12_programme_pdf() {
@@ -210,12 +208,6 @@ function c12_programme_pdf() {
     } // end if file
 	}
 	
-	/*
-	
-	<a href="http://cave12.org/IMG/pdf/cave12_octobre_14_v3.1.pdf" title="Télécharger &ndash; 241.7 ko"   target="_blank" ></a>
-	
-	*/
-
 }
 
 
