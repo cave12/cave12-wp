@@ -37,7 +37,7 @@ get_header(); ?>
     // get slug of current page: 
     $c12_archive_slug = $post->post_name;
     
-    if ( false === ( $c12_archive_year = get_transient( 'c12_archive_yearX_'.$c12_archive_slug ) ) ) {
+    if ( false === ( $c12_archive_year = get_transient( 'c12_archive_year_'.$c12_archive_slug ) ) ) {
         
         // It wasn't there, so we generate the data and save the transient
         $c12_archive_year_start = $c12_archive_slug;
@@ -65,7 +65,7 @@ get_header(); ?>
      	 	set_transient(
      	 		'c12_archive_year_'.$c12_archive_slug, 
      	 		$c12_archive_year, 
-     	 		120 
+     	 		300 
      	 	); // 3 heures = 60*60*3
     
     } // end of get_transient test
@@ -81,11 +81,7 @@ get_header(); ?>
     			$current_post_id = get_the_ID();
 
     	  	$mem_date = c12_date($current_post_id);
-    	  	
-    	  	// run meta field fix.
-    	  	
-    	  	c12_fix_surtitre( $current_post_id );
-      
+    	  	      
       ?>
     		
     			<li>
