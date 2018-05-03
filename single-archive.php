@@ -1,5 +1,7 @@
 <?php
 /**
+ * This template shows a yearly archive.
+ * Example : cave12.org/archives/2018/
  * @package WordPress
  * @subpackage HTML5_Boilerplate
  */
@@ -31,8 +33,6 @@ get_header(); ?>
     <?php the_content(); ?>
     
     <?php 
-    
-    // auto-display posts of current year.
     
     // get slug of current page: 
     $c12_archive_slug = $post->post_name;
@@ -94,9 +94,11 @@ get_header(); ?>
     				 ?>
     			  <span class="date"><?php 
     			  
-    			  echo date_i18n( "j", $mem_date["start-unix"]);
+    			  echo date_i18n( "j", $mem_date["start-unix"]); // day
     			  echo ' ';
-    			  echo date_i18n( "F", $mem_date["start-unix"]); ?></span> – 
+    			  echo date_i18n( "F", $mem_date["start-unix"]); // month
+    			  
+    			  ?></span> – 
     			   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     			</li>
     		
