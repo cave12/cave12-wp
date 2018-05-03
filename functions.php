@@ -230,7 +230,10 @@ function c12_programme_pdf() {
 
 function cave12_noindex() {
 	// your custom condition
-	if ( is_page( 'desinscription' )  ) {
+	if ( is_page( array( 
+		'desinscription-reussie', 
+		'inscription-reussie' 
+		) ) ) {
 		wp_no_robots();
 	}
 		
