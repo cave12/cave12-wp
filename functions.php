@@ -108,7 +108,7 @@ function c12_concerts() {
 	 	set_transient(
 	 		'c12_concert_query', 
 	 		$c12_concerts, 
-	 		120 
+	 		300 
 	 	); // heures = 60*60*N
 	
 	} // end of get_transient test
@@ -116,6 +116,19 @@ function c12_concerts() {
 	return $c12_concerts;
 	
 }
+
+/*
+* Delete transient on publish
+* On élimine le transient lorsqu'un nouveau concert est publié
+*/
+
+function c12_delete_query_transient( $ID, $post ) {
+    // Deletes the transient when a new post is published
+    delete_transient( 'c12_concert_query' );
+}
+add_action( 'publish_post', 'c12_delete_query_transient', 10, 2 );
+
+
 
 function c12_date($postID) {
 
