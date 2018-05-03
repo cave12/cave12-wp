@@ -17,6 +17,8 @@ require_once( 'functions/pre-get-posts.php' );
 
 require_once( 'functions/other-concerts.php' );
 
+require_once( 'functions/fix-surtitre.php' );
+
 /* admin interface
 ******************************/
 
