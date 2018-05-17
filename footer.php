@@ -47,6 +47,8 @@
 				<li><a href="http://www.ville-ge.ch/culture/prixVdG11/laureat_musique.html" class="prix-ville-geneve" target="_blank">prix 2011 de la ville de genève</a></li>
 			</ul>
 			
+			<?php get_search_form(); ?>
+			
 		</div><!--#pied-->
   
 </div><!--#page-->

@@ -1018,6 +1018,44 @@ a.ar-co-pre {
 
 /* @end */
 
+/* @group Search */
+
+.search-results article {
+	padding: 10px;
+	width: 96%;
+	float: left;
+	clear: left;
+	margin: 10px 0;
+	border-color: #aaa;
+	border-width: 4px;
+	border-style: double;
+}
+
+.search-results  h3 {
+	margin-top: 0;
+}
+
+.search-form {
+/*	float: left;*/
+	margin: 0;
+	padding: 0;
+	display: inline;
+	border: 0;
+	margin: 0.6em 1em 0 1em;
+}
+
+.search-form input {
+	width: 100px;
+}
+
+.search-form input[type="submit"] {
+	display: none;
+}
+
+
+
+/* @end */
+
 /* @group Google Maps */
 
 .mot-lieu {
@@ -1129,52 +1167,7 @@ ul.navigation-top {
 
 /* @end */
 
-/* @group SEARCH FORM */
 
-.searchform {
-/*	float: left;*/
-	margin: 0;
-	padding: 0;
-	display: inline;
-	border: 0;
-}
-.searchform fieldset {
-/*	float: left;*/
-	margin: 0;
-	padding: 0;
-	display: inline;
-	border: 0;
-	padding-top: 5px;
-}
-
-.searchform input {
-	width: 100px;
-}
-
-.resultats-recherche ul {
-	padding: 0 0 0em 1em;
-	}
-.resultats-recherche ul li {
-	list-style: none;
-	margin: 1em 0;
-	padding: 0;
-}
-.resultats-recherche a {
-/*	color: #111;*/
-}
-.resultats-recherche a:hover {
-/*	color: #f10000;*/
-}
-
-.resultats-recherche .secteur-1 .date {
-	display: inline;
-} 
-
-.resultats-recherche .secteur-3 {
-	font-size: 120%;
-}
-
-/* @end */
 
 /* --- PLUGIN LIENS SORTANTS --- */
 
