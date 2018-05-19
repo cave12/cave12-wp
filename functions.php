@@ -13,6 +13,8 @@ require_once( 'functions/metabox.php' );
 
 require_once( 'functions/acf.php' );
 
+require_once( 'functions/ical.php' );
+
 require_once( 'functions/pre-get-posts.php' );
 
 require_once( 'functions/other-concerts.php' );
