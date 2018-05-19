@@ -7,7 +7,7 @@ Theme URI: http://www.cave12.org/
 	http://www.opensource.org/licenses/gpl-license.php
 */
 
-/* Begin Typography & Colors */
+/* Typography & Colors */
 
 @font-face {
     font-family: 'lmroman8regular';
@@ -29,7 +29,6 @@ Theme URI: http://www.cave12.org/
          url('../../fonts/LMrom/lmroman8-bold.svg#lmroman8bold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -43,7 +42,7 @@ Theme URI: http://www.cave12.org/
     font-style: normal;
 }
 
-  /* @group Generic */
+/* @group Generic */
 
 img {border:0;}
 
@@ -61,24 +60,17 @@ body {
 	text-align: center;
 	
 	font-family: "lmroman8regular", Courier, "Courier New", Consolas, monospace, sans-serif;
-
-	}
+}
 	
 small {
 	font-size: 0.9em;
 	line-height: 1.5em;
-	}
+}
 
 b, strong,
 h1, h2, h3 {
 	font-weight: normal;
 	font-family: "lmroman8bold";
-	}
-	
-h1, 
-h2, 
-h3 {
-	
 }
 
 i, em {
@@ -86,22 +78,6 @@ i, em {
 	font-style: normal;
 	font-family: "lmroman8italic";
 }
-
-.notc {
-/*	font-family: "NotCourierSansB", "NotCourierSans";
-	font-weight: normal;*/
-}
-
-.inco {
-/*	font-family: "Inconsolata","InconsolataM", Courier, "Courier New", Consolas, monospace, sans-serif;*/
-}
-
-h1 {
-/*	font-family: "NotCourierSansB", "NotCourierSans";
-	font-weight: normal; */
-	/*otherwise we have a double boldification...*/
-}	
-
 
 h1, h2 {
 	font-size: 1.6em;
@@ -166,10 +142,8 @@ img.puce {
 
 #page {
 	text-align: left;
-	/*padding: 10px 40px 20px 40px;*/
-	}
-	
-	
+}
+
 
 /* @group Header */
 
@@ -180,7 +154,7 @@ img.puce {
 	position: fixed;
 	width: 100%;
 	z-index: 15;
-	}
+}
 
 .site-title {	
 	margin:0;
@@ -214,8 +188,6 @@ h1.site-title,
 	position: absolute;
 	right: 1em;
 	top:  0px;
-/*	height: 4em;*/
-/*	line-height: 3.5;*/
 }
 .menu-link a {
 	color: #fff;
@@ -253,7 +225,6 @@ h1.site-title,
 	top: 5px;
 	width: auto;
 	z-index: 100000;
-	/* Above WP toolbar. */
 }
 
 
@@ -263,11 +234,7 @@ h1.site-title,
 
 .mini-cal {
 	position: absolute;
-/*	top: 0px;
-	left: 0px;*/
 	list-style: none;
-/*	margin-top: 1.5em;
-	margin-left: 13em;*/
 	padding-right: 5.5em;
 	padding-left: 0;
 	overflow: hidden;
@@ -277,11 +244,8 @@ h1.site-title,
 	font-size: 80%;
 }
 
-
-
 .mini-cal-box {
 	border: 0px solid #666;
-	
 	text-align: center;
 	margin: 0.4em;
 	float: left;
@@ -291,7 +255,6 @@ h1.site-title,
 .mini-cal-box a {
 	text-decoration: none;
 	color: #333333;
-/*	font-weight: bold;*/
 	display: block;
 	background: #fff;
 	box-shadow: inset 0 0 8px rgba(172, 171, 171, 0.96);
@@ -321,7 +284,6 @@ h1.site-title,
 
 .contenu {
 	padding-left: 0.7em;
-/*	padding-top: 6.5em;*/
 	padding-top: 3em;
 	padding-right: 1em;
 	padding-bottom: 0.5em;
@@ -358,7 +320,6 @@ h1.site-title,
 
 .contenu p {
 	line-height: 1.25;
-	
 }
 .contenu h3 {
 	font-size:1.1em;
@@ -371,8 +332,6 @@ h1.site-title,
 .contenu div.surlignable {
 	padding: 0 10px 10px 10px;
 }
-
-
 
 /* @end */
 
@@ -388,32 +347,21 @@ h1.site-title,
 	z-index: 10;
 }
 
-/*#contenu #date,*/
 .art-date 		{
 	float:left;
 	display: inline;
 	position:relative;
-	top:0px;left:0px;
-	/*background:#dfdfdf;*/
+	top:0px;
+	left:0px;
 	
-	text-align:center;padding:10px;
-	/*-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;	*/
+	text-align:center;
+	padding:10px;
+	min-width: 80px;
+
 	text-decoration: none;
 	background-color: #fff;
 	border: 1px solid #333;
 	box-shadow: inset 0 0 31px rgba(208, 208, 208, 0.61);
-/*	color: #fff;*/
-}
-
-.article-actu .art-date {
-	/*background-color: #4c2121;
-	color: #fff;
-	border-width: 2px;
-	border-color: #510404;
-	text-shadow: 1px 2px 1px rgba(24, 24, 24, 0.37);
-	box-shadow: inset 0 0 44px rgb(225, 33, 33);*/
 }
 
 .single-post .date-block,
@@ -426,16 +374,12 @@ h1.site-title,
 	min-width: 5em;
 }
 
-.contenu.programme #date {
-	
-	}
 .contenu.programme h2.surtitre {
 	margin-top:10px;
 }
 
 .daynr {
-	font-size:3em;
-/*	font-weight: bold;*/
+	font-size: 3em;
 }
 
 .art-date .day, .art-date .month {
@@ -443,12 +387,10 @@ h1.site-title,
 }
 
 .contenu .art-box {
-
 	padding: 10px;
 	width: 96%;
 	float: left;clear:left;
 	margin: 10px 0;
-/*	border: 1px solid white;*/
 	border-color: #aaa;
 	border-width: 4px;
 	border-style: double;
@@ -461,7 +403,6 @@ h1.site-title,
 .art-date .sup { /* superscript */
 	font-size: 50%;
 	margin: 0 -0.2em;
-/*	vertical-align: super;*/
 }	
 
 .mini-cal-box .sup { 
@@ -472,7 +413,6 @@ h1.site-title,
 .contenu .demain {
 	background-color: #f2f2f2;
 }
-
 
 /* ---  DATES proches --- */
 
@@ -499,8 +439,7 @@ h1.site-title,
 	color: #fff;
 }
 
-
-  /* ---  DATES passees --- */
+/* ---  DATES passees --- */
 .contenu .recent div.art-sommaire a {
 	color: #444;
 	font-size: 0.9em;
@@ -508,7 +447,6 @@ h1.site-title,
 .contenu .recent div.art-sommaire strong {
 	color: #d00;
 }
-
 
 /* @end */
 
@@ -525,7 +463,7 @@ h1.site-title,
 	padding-top: 0.1em;
 	color: #303030;
 	z-index: 1;
-	}
+}
 
 .max-width,
 .programme-txt,
@@ -559,7 +497,6 @@ span.category,
 span.dtstart {
 	display: none;
 }
-
 
 /* @end */
 
@@ -714,19 +651,15 @@ h3.titre-sommaire-h3,
 }
 
 .bloc-date {
-/*	display: none !important;*/
 	float: left;
 	margin: 0 5px 10px 10px;
-	
 }
 
 .concert-series .art-date {
-/*	background-color: #eee;*/
 	color: #444;
 }
 .bloc-date .daynr {
 	font-size: 170%;
-/*	font-weight: bold;*/
 }
 .concert-series a.art-date:hover {
 	background: #777;
@@ -736,11 +669,6 @@ h3.titre-sommaire-h3,
 .concert-series .bloc-date-on {
 	background: #f5f5f5;
 	color: #222;
-/*	font-weight: bold;*/
-}
-
-.bloc-date-on .daynr {
-/*	font-size: 270%;*/
 }
 
 .bloc-date-container {
@@ -763,15 +691,14 @@ h3.titre-sommaire-h3,
 
 /* @end */
 
-
-
 /* -- bottom paragraph -- */
-.contenu div.sommaire {position:relative;
-						float:left;clear:left;
-						margin:20px 0 0 10px;
-						font-size:1.1em;
-						width:90%;
-						}
+.contenu div.sommaire {
+	position:relative;
+	float:left;clear:left;
+	margin:20px 0 0 10px;
+	font-size:1.1em;
+	width:90%;
+}
 
 /* @group Archives */
 
@@ -796,10 +723,6 @@ ul.top-archive {
 ul.top-archive li {display:inline;}
 .top-archive a {text-decoration:none;}
 .top-archive a:hover {text-decoration:underline;}
-
-.contenu.archives {
-/*	padding:0;*/
-	}
 	
 .contenu.archives h1,
 #contenu.archives p {margin-left:10px;}
@@ -822,7 +745,6 @@ ul.top-archive li {display:inline;}
 .page-template-archives .separateurs li:after {
 	content: " ";
 }
-
 
 
 /* @end */
@@ -853,14 +775,11 @@ ul.top-archive li {display:inline;}
 .affiche {
 	float: left;
 	margin: 5px 25px 2px 0px;
-/*	border: 1px solid #333;*/
 }
 
 .affiche img {
 	display: block;
-/*	border: 5px dashed #aaa;*/
 	border: 1px solid #999;
-/*	background: #bbb;*/
 
 	-webkit-transition: border-color 0.3s ease;
 	-moz-transition: border-color 0.3s ease;
@@ -887,14 +806,12 @@ ul.top-archive li {display:inline;}
 }
 
 .contenu-chapitre {
-/*	border: 1px solid #333;*/
 	float: left;
 	width: 100%;
 }
 
 .bloc-affiches {
 	width: 50%;
-/*	border: 1px solid #333;*/
 	margin: 0;
 	padding: 0;
 	float: left;
@@ -937,7 +854,6 @@ ul.top-archive li {display:inline;}
 .toc-alphabetic {
 	font-size: 180%;
 	margin-top: 0;
-/*	text-transform: lowercase;*/
 }
 .toc-alphabetic a {
 	text-decoration: none;
@@ -950,11 +866,6 @@ ul.top-archive li {display:inline;}
 	padding-bottom: 0.1em;
 	padding-left: 0.3em;
 	margin-top: 0.2em;
-}
-
-.toc-list {
-	/*padding-left: 1em;
-	padding-right: 1em;*/
 }
 
 .ul-initiale {
@@ -983,9 +894,7 @@ a.li-co {
 	display: block;
 	cursor: pointer;
 	text-decoration: none;
-/*	border: 1px solid #333;*/
 }
-
 
 .li-co h3 {
 	text-decoration: underline;
@@ -1011,7 +920,6 @@ a.ar-co-pre {
 .li-co-in {
 	background: #fff;
 	padding: 0.1em 1em;
-/*	float: left;*/
 	width: auto;
 	max-width: 50%;
 }
@@ -1036,7 +944,6 @@ a.ar-co-pre {
 }
 
 .search-form {
-/*	float: left;*/
 	margin: 0;
 	padding: 0;
 	display: inline;
@@ -1052,26 +959,19 @@ a.ar-co-pre {
 	display: none;
 }
 
-
-
 /* @end */
 
 /* @group Google Maps */
 
 .mot-lieu {
 	display: block;
-	/*clear: left;
-	float: left;*/
-/*	border: 1px solid #333;*/
 	clear: left;
 	float: left;
 	padding: 16px 0 16px 0;
 	margin: 0px 0 0 14px;
 	margin:  0;
 	position: relative;
-	width: 100%;
-/*	background: #999;*/
-	
+	width: 100%;	
 }
 
 .mot-lieu a {
@@ -1083,9 +983,7 @@ a.ar-co-pre {
 	font: 0/0 a;
 	text-shadow: none;
 	color: transparent;
-	/*border: 3px solid #888;*/
 	border: 1px solid #000;
-/*	border-radius: 3px;*/
 }
 
 .mot-lieu a:hover {
@@ -1119,7 +1017,6 @@ a.ar-co-pre {
 	padding-bottom: 2em;
 	float: left;
 	width: 100%;
-/*	padding: 0 1em;*/
 }
 
 .bloc-navig ul {
@@ -1134,9 +1031,6 @@ a.ar-co-pre {
 ul.navigation-top {
 		border-top: 2px solid #333;
 		padding-top: 1.5em;
-}
-.navigation-top .li-first {
-/*	margin-top: 0.9em;*/
 }
 	
 .bloc-navig ul li {
