@@ -54,8 +54,8 @@ Un validateur: https://icalendar.org/validator.html
 Les URL possibles:
 
 - https://www.cave12.org/cave12.ics
+- webcal://cave12.org/cave12.ics
 - https://www.cave12.org/ical/
 - https://www.cave12.org/?p=1782
-- https://www.cave12.org/?postname=ical
 
 ***
