@@ -8,9 +8,26 @@
 
 function c12_archive_pages( $query ) {
 
-  if ( $query->is_archive() ) {
-  	$query->set( 'posts_per_page', 42);
+  if ( is_archive() ) {
+  	 $query->set( 'posts_per_page', 42);
   }
+  
+  /*
+   * Note:
+   * Affecte le nombre d'années, 
+   * sur les pages Archives par année
+  */
+  
+  if ( is_page_template( 'page-templates/affiches.php' ) ) {
+  
+  	$query->set( 'posts_per_page', 5);
+  
+  } else {
+  
+  
+  }
+  
+  
 
 }
 add_filter( 'pre_get_posts', 'c12_archive_pages' );

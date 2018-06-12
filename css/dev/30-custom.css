@@ -772,23 +772,25 @@ ul.top-archive li {display:inline;}
 
 /* @group AFFICHES */
 
-.affiche {
-	float: left;
-	margin: 5px 25px 2px 0px;
+.affiche .ul-horiz-img {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+}
+
+.affiche .ul-horiz-img li {
+	display: block;
+	max-width: 300px;
 }
 
 .affiche img {
 	display: block;
+	width: 100%;
+	height: auto;
 	border: 1px solid #999;
-
-	-webkit-transition: border-color 0.3s ease;
-	-moz-transition: border-color 0.3s ease;
-	-o-transition: border-color 0.3s ease;
 	transition: border-color 0.3s ease;
-}
-
-.bloc-affiches .ul-horiz-img li {
-	margin: 10px;
 }
 
 .affiche img:hover,
@@ -810,23 +812,7 @@ ul.top-archive li {display:inline;}
 	width: 100%;
 }
 
-.bloc-affiches {
-	width: 50%;
-	margin: 0;
-	padding: 0;
-	float: left;
-}
 
-.ul-horiz-img {
-	margin: 0;
-	padding: 0;
-}
-
-.ul-horiz-img li {
-	display: block;
-	float: left;
-	margin: 3px;
-}
 
 .affiche-credits {
 	padding: 5px 0 0 10px;

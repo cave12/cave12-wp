@@ -14,6 +14,16 @@ Dans le code: un div#page englobe le tout.
  
  #contenu .contenu - il a un grand padding à gauche pour laisser la place au menu. Le positionnement est appliqué sur ".contenu"
 
+### Quels sont les relations entre contenus?
+
+Explicatifs dans https://github.com/cave12/migration-spip-wp
+
+#### Comment les affiches sont-elles liées aux concerts?
+
+- Relation via post_parent = le fichier a été uploadé sur un article. Son champ "post_parent" contient l'ID de l'article.
+- Relation via un custom field, c12_spip_article_id
+- Relation via ACF = champ ACF "galerie".
+
 ***
 
 ### Gestion du iCal, comment ça fonctionne?
