@@ -17,7 +17,7 @@ require_once( 'functions/ical.php' );
 
 require_once( 'functions/pre-get-posts.php' );
 
-require_once( 'functions/other-concerts.php' );
+require_once( 'functions/get-content.php' );
 
 /* admin interface
 ******************************/
