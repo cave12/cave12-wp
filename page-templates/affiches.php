@@ -18,11 +18,10 @@ get_header(); ?>
   
   echo c12_affiches('xavier-robel');
   
-  echo c12_affiches('thomas-perrodin');
-  
   echo c12_affiches('harrisson');
   
-    
+  echo c12_affiches('thomas-perrodin');
+
   ?>
 	
 </div><!--#contenu-->

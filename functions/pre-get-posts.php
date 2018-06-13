@@ -22,8 +22,9 @@ function c12_archive_pages( $query ) {
   
   	$query->set( 'posts_per_page', 5);
   
-  } else {
-  
+  } else if ( is_page_template( 'page-templates/affiches-par.php' ) ) {
+  	
+  	$query->set( 'posts_per_page', -1);
   
   }
   
