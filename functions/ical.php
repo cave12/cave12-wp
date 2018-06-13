@@ -45,8 +45,7 @@ function cave12_ical_events() {
 	$r = "\r\n";
 	$html = "";
 	
-	// Produce the markup
-	// Generate output:
+	// Generate output
 	
 	if ( $cave12_cal_events->have_posts() ) :
 	
@@ -54,15 +53,12 @@ function cave12_ical_events() {
 	  
 				$current_post_id = get_the_ID();
 				$c12_item_date   = c12_date($current_post_id);
-				$unixstart        = $c12_item_date["start-unix"];
-				$unixend          = $c12_item_date["end-unix"];
+				$unixstart       = $c12_item_date["start-unix"];
+				$unixend         = $c12_item_date["end-unix"];
 				
 				if ($unixend <= $unixstart) {
-									
-				 	// end day is SMALLER: 
-				 	// we only want the TIME!!
-				 	
-				 	// add 2h to end time:
+
+				 	// add 2h to end time
 				 	$unixend = $unixend + 7200;
 				 	
 				}
@@ -71,8 +67,6 @@ function cave12_ical_events() {
 				$icaltitle = str_replace('&#8211;', '–', $icaltitle);
 				$icaltitle = str_replace('&rsquo;', '’', $icaltitle);
 				
-		  	
-	  
 			  $html .= "BEGIN:VEVENT" .$r;
 				$html .= "SUMMARY;LANGUAGE=FR:". $icaltitle .$r;
 				$html .= "UID:article".$current_post_id."@cave12.org".$r;
@@ -84,7 +78,7 @@ function cave12_ical_events() {
 				$html .= "END:VEVENT".$r;
 
 	  endwhile; 
-  	wp_reset_postdata();
+  
 	endif;
 	
 	return $html;
