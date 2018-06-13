@@ -156,6 +156,16 @@ img.puce {
 	z-index: 15;
 }
 
+/* WP admin bar fix */
+
+@media only screen 
+and (max-width : 600px) {
+	.logged-in .header {
+		position: absolute;
+		top:  46px;
+	}
+}
+
 .site-title {	
 	margin:0;
 	float:left;
@@ -776,13 +786,10 @@ ul.top-archive li {display:inline;}
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	display: grid;
-	grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
 }
 
 .affiche .ul-horiz-img li {
 	display: block;
-	max-width: 300px;
 }
 
 .affiche img {
@@ -812,11 +819,8 @@ ul.top-archive li {display:inline;}
 	width: 100%;
 }
 
-
-
 .affiche-credits {
 	padding: 5px 0 0 10px;
-	float: left;
 }
 
 .galerie-large img {
@@ -832,6 +836,23 @@ ul.top-archive li {display:inline;}
 .galerie-affiches img {
 	border: 1px solid #999;
 }
+
+@media only screen and (min-width: 740px) {
+	
+	.affiche .ul-horiz-img {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+	}
+	
+	.affiche .ul-horiz-img li {
+		display: block;
+		max-width: 300px;
+	}
+}
+
 
 /* @end */
 
