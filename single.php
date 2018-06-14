@@ -14,7 +14,9 @@ get_header(); ?>
 			
 			<?php
 			
-			$mem_date = c12_date($post->ID);
+			$id = get_the_ID();
+						
+			$mem_date = c12_date($id);
 			
 			if ( $mem_date ) { 
 			    	 
@@ -63,7 +65,7 @@ get_header(); ?>
 			
 			$c12_content = get_the_content();
 			
-			$c12_content = tiss_process_hyperlinks($c12_content);
+			$c12_content = c12_process_hyperlinks($c12_content);
 			
 			echo apply_filters('the_content',$c12_content);
 			

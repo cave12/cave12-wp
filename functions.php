@@ -57,7 +57,7 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 /* Turn links into hyperlinks
 ******************************/
 
-function tiss_process_hyperlinks($tiss_content) {
+function c12_process_hyperlinks($tiss_content) {
 			
 			$tiss_content = ' ' . $tiss_content;
 			$attribs = ''; 
