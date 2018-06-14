@@ -111,7 +111,7 @@ function c12_affiches( $auteur ) {
   
   if ( $c12_affiches->have_posts() ) :
   
-  	$html .= '<div class="bloc-affiches">';
+  	$html .= '<section class="bloc-affiches">';
   	
   	if ( $context == 'affiches' ) {
   	
@@ -128,7 +128,9 @@ function c12_affiches( $auteur ) {
   	$html .= '<div class="liste-affiches">';
   
   while( $c12_affiches->have_posts() ) : $c12_affiches->the_post();
-  
+  			
+  			global $post;
+  			
   			$id = get_the_ID();
   			
   			$pdf = wp_get_attachment_url( $id );
@@ -147,11 +149,9 @@ function c12_affiches( $auteur ) {
 					
 				$html .= '</a>';
 					
-					$html .= '<figcaption class="affiche-meta">'; 
+				$html .= '<figcaption class="affiche-meta">'; 
 					
 					// Concert lié?
-					// echo $post->post_parent;
-					
 					// Utiliser le custom field:
 					// c12_spip_linked_article
 					
@@ -164,39 +164,52 @@ function c12_affiches( $auteur ) {
 
 					} else {
 					
-						// Tester via ACF
-						// https://support.advancedcustomfields.com/forums/topic/reverse-query-relationship-subfield-which-is-nested-in-a-repeater-field/
-					
-						// conclusion: non, cela va être trop lourd.
+						/*
+						* Tester via ACF ?
+						*	https://support.advancedcustomfields.com/forums/topic/reverse-query-relationship-subfield-which-is-nested-in-a-repeater-field/
 						
-						// mieux: faire un code sur la page du concert, qui va checker les images de la galerie liée, et remplir leur champ "post_parent" avec l'ID de l'article.
+						* conclusion: non, cela ferait une requête trop lourde!
+						* mieux: on a fait un code sur la page du concert, qui va checker les images de la galerie liée, et remplir leur champ "post_parent" avec l'ID de l'article.
+						*/
+						
+						$parent_id = $post->post_parent;
+						
+						if ( $parent_id ) {
+							
+							$html .= c12_linked_article( $parent_id );
+						
+						}
+						
 					}
 					
-						
-						$html .= '<div><a href="'; 
-						$html .= wp_get_attachment_url( $id ); 
-						$html .= '">PDF</a></div>';
-						$html .= '</figcaption>';
+					$html .= '<div><a href="'; 
+					$html .= wp_get_attachment_url( $id ); 
+					$html .= '">PDF</a>';
+												
+					if ( current_user_can( 'edit_others_pages' ) ) {
+						$html .= ' ( <a href="'; 
+						$html .= admin_url('upload.php?item='.$id);
+						$html .= '">edit</a> )';
+					}
+					
+					$html .= '</div>';
 				
-					$html .= '</figure>';
+				$html .= '</figcaption>';
+		
+			$html .= '</figure>';
 
     endwhile; 
   	
-		$html .= '</ul>';
-		$html .= '</div>';
-		
 		if ( $context == 'affiches' ) {
 			
 			$html .= '<div class="affiche-credits">';
-			
-			// Produce link to poster list template...
-						
 			$html .= '(<a href="/affiches-'.$auteur.'">voir +</a>)';
+			$html .= '</div>';
 			
 		}
 		
-		$html .= '</div>';
-		$html .= '</div><!-- .bloc-affiches -->';
+		$html .= '</div>'; // .liste-affiches
+		$html .= '</section>'; // .bloc-affiches
 
   endif; 
   
@@ -207,6 +220,24 @@ function c12_affiches( $auteur ) {
 /*
 * Display linked article
  */
+
+function c12_linked_article( $c12_article_id ) {
+
+	$html = '';
+	
+	$inner_query = new WP_Query(array(
+		'p'   => $c12_article_id,
+	));
+	
+  while ($inner_query->have_posts()) : $inner_query->the_post();
+  
+  	$html .= c12_linked_article_output();
+      
+  endwhile;
+    
+  return $html;  
+	
+}
 
 function c12_linked_spip_article( $c12_spip_article_id ) {
 
@@ -219,18 +250,59 @@ function c12_linked_spip_article( $c12_spip_article_id ) {
 		'meta_value' => $c12_spip_article_id,
 	));
 	
-    while ($inner_query->have_posts()) : $inner_query->the_post();
-    
-    	$html .= '<div class="concert"><a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a></div>';
-        // do something
+  while ($inner_query->have_posts()) : $inner_query->the_post();
+  
+  	$html .= c12_linked_article_output();
       
-      $html .= '<div class="date">';
-      $mem_date = c12_date(get_the_ID());
-      $html .= date_i18n( "j F Y", $mem_date["start-unix"]); 
-      $html .= '</div>';
-        
-    endwhile;
+  endwhile;
     
   return $html;  
 	
-} 
+}
+
+function c12_linked_article_output() {
+	
+	$output .= '<div class="concert"><a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a></div>';
+	
+	$output .= '<div class="date">';
+	$mem_date = c12_date(get_the_ID());
+	$output .= date_i18n( "j F Y", $mem_date["start-unix"]); 
+	$output .= '</div>';
+	
+	return $output;
+
+}
+
+function c12_fix_affiches( $article_id ) {
+
+	// check for ACF Gallery
+	
+	$c12_affiches = get_field( 'c12_affiches', $article_id );
+	
+	if ($c12_affiches) {
+  
+  		// tester aussi si $c12_affiches[0] > zero
+  		// car le champ peut-être là, mais vide.
+
+		if  ( $c12_affiches[0] > 0) {
+									
+			foreach ( $c12_affiches as $affiche ) {
+			
+				// echo '<p>found attachment: '.$article_id.' as parent of <a href="'.admin_url('upload.php?item='.$affiche["id"]).'">'. $affiche["id"].'</a></p>';
+				
+				// echo '<p>define post '.$article_id.' as parent of '. $affiche["id"].'</p>';
+				
+				$c12_data = array(
+			      'ID'           => $affiche["id"],
+			      'post_parent'  => $article_id
+				  );
+				
+				wp_update_post( $c12_data );
+				
+			}
+		}
+	}
+	
+	return $c12_affiches; 				
+
+}

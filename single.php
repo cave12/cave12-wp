@@ -76,6 +76,8 @@ get_header(); ?>
 	<?php 
 	
 	echo c12_other_concerts();
+	
+	c12_fix_affiches( $id );
 
 	 ?>
 	</div><!-- .programme-txt -->
