@@ -19,6 +19,13 @@ require_once( 'functions/pre-get-posts.php' );
 
 require_once( 'functions/get-content.php' );
 
+/**
+ * Optional: Add theme support for lazyloading images.
+ *
+ * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+ */
+require get_template_directory() . '/pluggable/lazyload/lazyload.php';
+
 /* admin interface
 ******************************/
 
