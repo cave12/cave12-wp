@@ -16,6 +16,9 @@ get_header(); ?>
   if (have_posts()) : while (have_posts()) : the_post();
   endwhile; endif; 
   
+  // Note: 'posts_per_page' => 5, 
+  // défini dans pre-get-posts.php
+  
   echo c12_affiches('xavier-robel');
   
   echo c12_affiches('harrisson');

@@ -20,7 +20,7 @@ function c12_archive_pages( $query ) {
   
   if ( is_page_template( 'page-templates/affiches.php' ) ) {
   
-  	$query->set( 'posts_per_page', 5);
+  	$query->set( 'posts_per_page', 3);
   
   } else if ( is_page_template( 'page-templates/affiches-par.php' ) ) {
   	

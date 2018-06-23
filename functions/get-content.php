@@ -203,7 +203,11 @@ function c12_affiches( $auteur ) {
 		if ( $context == 'affiches' ) {
 			
 			$html .= '<div class="affiche-credits">';
-			$html .= '(<a href="/affiches-'.$auteur.'">voir +</a>)';
+			$html .= '<a href="/affiches-'.$auteur.'">';
+			// posters Xavier Robel
+			$html .= 'Voir toutes les affiches ';
+			$html .= $term->name;
+			$html .= '</a>';
 			$html .= '</div>';
 			
 		}
@@ -262,12 +266,14 @@ function c12_linked_spip_article( $c12_spip_article_id ) {
 
 function c12_linked_article_output() {
 	
+	$output = '';
+	
 	$output .= '<div class="concert"><a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a></div>';
 	
-	$output .= '<div class="date">';
-	$mem_date = c12_date(get_the_ID());
-	$output .= date_i18n( "j F Y", $mem_date["start-unix"]); 
-	$output .= '</div>';
+//	$output .= '<div class="date">';
+//	$mem_date = c12_date(get_the_ID());
+//	$output .= date_i18n( "j F Y", $mem_date["start-unix"]); 
+//	$output .= '</div>';
 	
 	return $output;
 
