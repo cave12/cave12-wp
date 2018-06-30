@@ -19,9 +19,15 @@ get_header(); ?>
 		<h3 class="titre-sommaire-h3"><?php the_title(); ?></h3>
 	</div>
 	
-	<?php c12_programme_pdf(); ?>
+	<?php 
 	
-	<?php c12_mailing_signup(); ?>
+	$c12_page_content = get_the_content();
+	
+	c12_programme_pdf();
+	
+	c12_mailing_signup(); 
+	
+	?>
 	
 	</div><!--#propaganda-->
 	
@@ -123,6 +129,13 @@ get_header(); ?>
 		 endwhile; 
 	  wp_reset_postdata();
 	 endif; 
+	 
+	 if ($c12_page_content) {
+	 		
+//	 		echo $c12_page_content;
+	 		echo apply_filters('the_content',get_the_content( $c12_page_content ));
+	 
+	 }
 	
 	 ?>
 

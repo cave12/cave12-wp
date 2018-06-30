@@ -44,7 +44,11 @@ Theme URI: http://www.cave12.org/
 
 /* @group Generic */
 
-img {border:0;}
+img {
+	border: 0;
+	max-width: 100%;
+	height: auto;
+}
 
 html {
 		color: #333;
