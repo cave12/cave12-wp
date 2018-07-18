@@ -99,6 +99,12 @@ function wprig_add_image_placeholders( $content ) {
 	if ( is_feed() || is_preview() ) {
 		return $content;
 	}
+	
+	// Don't lazy-load the front-page.
+	if ( is_front_page() ) {
+	return $content;
+	}
+	
 	// Don't lazy-load if the content has already been run through previously.
 	if ( false !== strpos( $content, 'data-src' ) ) {
 		return $content;

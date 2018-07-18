@@ -26,6 +26,10 @@ Explicatifs dans https://github.com/cave12/migration-spip-wp
 
 ***
 
+### Gestion du LazyLoad, comment ça fonctionne?
+
+On utilise un script "LazyLoad" pour optimiser le chargement des pages ayant beaucoup d'images (la section Affiches). Le script utilisé provient du theme [WPRig](https://wprig.io/). C'est une version modifiée du script LazyLoad de Jetpack.
+
 ### Gestion du iCal, comment ça fonctionne?
 
 Sous Spip:  L’adresse des événements d’un site SPIP au format iCal est :
