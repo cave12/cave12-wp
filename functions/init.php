@@ -77,14 +77,9 @@ add_action( 'wp_enqueue_scripts', 'custom_register_styles', 10 );
 
 remove_action( 'wp_head', 'shortlink_wp_head' );
 
-remove_action( 'wp_head', 'feed_links' ); // not working...
-remove_action( 'wp_head', 'feed_links', 2 );
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-// in order to remove the comments feed. need to add manually the main RSS feed to the header.
-
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
-// remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'wp_generator' );
 
 // Prevents WordPress from testing ssl capability on domain.com/xmlrpc.php?rsd
 remove_filter( 'atom_service_url', 'atom_service_url_filter' );
@@ -94,7 +89,12 @@ remove_filter( 'atom_service_url', 'atom_service_url_filter' );
 ******************************/
 
 function c12_theme_setup() {
+
 	add_theme_support( 'post-thumbnails' );
+	
+	add_theme_support( 'automatic-feed-links' );
+	
+	
 //     set_post_thumbnail_size( 150, 150 ); // default Post Thumbnail dimensions  
 	// more info: http://codex.wordpress.org/Post_Thumbnails
 	

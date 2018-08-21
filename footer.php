@@ -50,6 +50,7 @@
 			<ul role="navigation" class="navigation">
 			<!--<li><a href="http://rss.cave12.org/cave12" title="S'abonner au RSS" rel="alternate" type="application/rss+xml">RSS</a></li>-->
 				<li><a href="webcal://cave12.org/cave12.ics" title="S'abonner au calendrier">ical</a></li>
+				<li><a href="https://www.cave12.org/feed/" title="S'abonner au flux de syndication">rss</a></li>
 			</ul>
 			
 			<?php get_search_form(); ?>

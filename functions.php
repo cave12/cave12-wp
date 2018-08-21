@@ -15,6 +15,8 @@ require_once( 'functions/acf.php' );
 
 require_once( 'functions/ical.php' );
 
+require_once( 'functions/rss.php' );
+
 require_once( 'functions/pre-get-posts.php' );
 
 require_once( 'functions/get-content.php' );
