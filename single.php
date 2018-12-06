@@ -43,6 +43,14 @@ get_header(); ?>
 				<!-- microformat data -->
 					<span class="category">Concert</span>
 					<!-- / microformat data -->
+					<?php 
+						
+						// Test for ACF field "La cave12 à l’Ecurie 'c12_surtitre'
+						if ( get_post_meta( get_the_ID(), 'c12_surtitre', true ) ) : ?>
+							<h2 class="surtitre"><?php echo get_post_meta( get_the_ID(), 'c12_surtitre', true ); ?></h2>
+						<?php endif;
+					
+					 ?>
 			    	<!-- <h2 class="#EDIT{surtitre} surtitre">(#SURTITRE)</h2> -->
 			    	<?php 
 			    	
@@ -68,9 +76,7 @@ get_header(); ?>
 			$c12_content = c12_process_hyperlinks($c12_content);
 			
 			echo apply_filters('the_content',$c12_content);
-			
-//			the_content( 'Read the rest of this entry &raquo;' ); 
-			
+						
 			?>
 			
 	<?php 
