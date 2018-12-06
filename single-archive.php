@@ -109,7 +109,7 @@ get_header(); ?>
     	
     	// Montrer nombre de concerts:
     	
-    	echo '<p>'.$c12_archive_year->found_posts ; 
+    	echo '<p class="archive-count prop-item">'.$c12_archive_year->found_posts ; 
     	echo ' concerts ont eu lieu en '.$c12_archive_slug;
     	echo '.</p>';
     	

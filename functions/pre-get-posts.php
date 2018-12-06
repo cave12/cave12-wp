@@ -15,7 +15,7 @@ function c12_archive_pages( $query ) {
   /*
    * Note:
    * Affecte le nombre d'années, 
-   * sur les pages Archives par année
+   * sur les pages "Archives par année"
   */
   
   if ( is_page_template( 'page-templates/affiches.php' ) ) {
@@ -32,6 +32,13 @@ function c12_archive_pages( $query ) {
 
 }
 add_filter( 'pre_get_posts', 'c12_archive_pages' );
+
+
+
+/*
+ * Improve RSS feed content...
+ * Don't show past dates
+*/
 
 
 /*
