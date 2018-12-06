@@ -2,14 +2,27 @@
  * Lazy-load images script.
  *
  * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+ 
+ * See also https://github.com/w3c/IntersectionObserver/issues/211
+ 
  */
+ 
 document.addEventListener( 'DOMContentLoaded', function() {
 	var lazyImages = [].slice.call( document.querySelectorAll( 'img.lazy' ) );
 
-	if ( 'IntersectionObserver' in window ) {
+	if ( 'IntersectionObserver' in window &&
+				'IntersectionObserverEntry' in window &&
+	    	'intersectionRatio' in window.IntersectionObserverEntry.prototype &&
+	    	'isIntersecting' in window.IntersectionObserverEntry.prototype ) {
+		
+		console.log("browser supports IntersectionObserver");
+		
 		let lazyImageObserver = new IntersectionObserver( function( entries, observer ) {
+		
 			entries.forEach( function( entry ) {
 				if ( entry.isIntersecting ) {
+					console.log("entry.isIntersecting triggered");
+					
 					let lazyImage = entry.target;
 					lazyImage.src = lazyImage.dataset.src;
 					if ( lazyImage.dataset.srcset ) {
@@ -22,15 +35,20 @@ document.addEventListener( 'DOMContentLoaded', function() {
 					lazyImageObserver.unobserve( lazyImage );
 				}
 			});
+		
 		});
 
 		lazyImages.forEach( function( lazyImage ) {
-		lazyImageObserver.observe( lazyImage );
+			lazyImageObserver.observe( lazyImage );
 		});
+		
 	} else {
 
 		// For older browsers lacking IntersectionObserver support.
 		// See https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+		
+		console.log("no IntersectionObserver - run older version");
+		
 		let active = false;
 
 		const lazyLoad = function() {
