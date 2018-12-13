@@ -40,27 +40,27 @@ Donc pour le site archive: https://www.cave12.org/spip-archive/spip.php?page=ica
 
 Voir https://www.spip.net/fr_article2390.html
 
-On utilisait un .htaccess rewrite, pour l'adresse suivante:
+On utilisait un .htaccess rewrite, pour l'adresse suivante:  
 http://www.cave12.org/cave12.ics
 
 Méthode utilisée dans SPIP:
 
-`
+```
 ### Custom ical .ics rule
 Options +FollowSymlinks
 RewriteEngine On
 RewriteRule cave12.ics /spip.php?page=ical [L]
-`
+```
 
 Nouvelle méthode dans WordPress:
 
-`
+```
 Options +FollowSymlinks
 RewriteEngine On
 RewriteRule cave12.ics /?p=1782 [L]
-`
+```
 
-À noter que ceci ne fonctionne pas : `RewriteRule cave12.ics /ical/ [L]`
+À noter que ceci ne fonctionne pas : `RewriteRule cave12.ics /ical/ [L]`  
 La raison: /ical/ est une adresse fictive, qui a elle-même besoin d'un rewrite pour fonctionner. Il faut utiliser /?p=1782 qui renvoie directement au bon article.
 
 Un validateur: https://icalendar.org/validator.html
