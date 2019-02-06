@@ -21,10 +21,11 @@ get_header(); ?>
   endwhile; endif; 
 
   // Get page slug
+  
   $author = $post->post_name;
   $author = str_replace("affiches-", "", $author);
   
-  
+  // Generate content
   
   echo c12_affiches($author);  
     
