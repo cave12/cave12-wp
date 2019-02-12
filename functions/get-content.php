@@ -292,9 +292,23 @@ function c12_linked_article_output() {
 
 }
 
+/*
+ * C12 Fix pour Affiches
+ *
+ * Fonction utilisée sur le modèle "single.php" (article).
+ *
+ * Cette fonction sert à donner aux affiches liées au concert montré
+ * un champ "post_parent". 
+ * Ce champ permet de faire la requête plus facilement quand on est sur l'affiche, 
+ * et qu'on veut connaître le concert lié.
+ *
+ * Cette fonction applique également la date du concert au fichier de l'affiche.
+ * 
+*/
+
 function c12_fix_affiches( $article_id ) {
 
-	// check for ACF Gallery
+	// Tester le champ ACF
 	
 	$c12_affiches = get_field( 'c12_affiches', $article_id );
 	
@@ -304,16 +318,40 @@ function c12_fix_affiches( $article_id ) {
   		// car le champ peut-être là, mais vide.
 
 		if  ( $c12_affiches[0] > 0) {
+		
+//			echo '<pre>';
+//			var_dump($c12_affiches);
+//			echo '</pre>';
 									
 			foreach ( $c12_affiches as $affiche ) {
 			
-				// echo '<p>found attachment: '.$article_id.' as parent of <a href="'.admin_url('upload.php?item='.$affiche["id"]).'">'. $affiche["id"].'</a></p>';
+				// Attention: $affiche peut être un nombre (ID de l'affiche) 
+				// ou un array, avec l'ID dans un champ [id].
+				// Il faut tester:
 				
-				// echo '<p>define post '.$article_id.' as parent of '. $affiche["id"].'</p>';
+				if (is_array($affiche)) {
+					
+					$affiche_id = $affiche["id"];
+				
+				} else {
+				
+					$affiche_id = $affiche;
+					
+				}
+			
+//				 echo '<p>found attachment: id <a href="'.admin_url('upload.php?item='.$affiche_id).'">'. $affiche_id.'</a></p>';
+//				
+//				 echo '<p>define post '.$article_id.' as parent of '. $affiche_id.'</p>';
+				
+				$mem_date = c12_date($article_id);
+				$fix_date = $mem_date["start-iso"]; 
+//				echo $fix_date;
 				
 				$c12_data = array(
-			      'ID'           => $affiche["id"],
-			      'post_parent'  => $article_id
+			      'ID'            => $affiche_id,
+			      'post_parent'   => $article_id,
+			      'post_date'     => $fix_date,
+			      'post_date_gmt' => get_gmt_from_date( $fix_date )
 				  );
 				
 				wp_update_post( $c12_data );
