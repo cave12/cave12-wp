@@ -2,6 +2,7 @@
 
 /*
 * Display other concerts of same artist
+* Used in: single.php
  */
  
 function c12_other_concerts() {
@@ -68,16 +69,18 @@ function c12_other_concerts() {
 }
 
 /*
-* Display Poster by Tag
- */
+* Display Attachment by Tag
+*
+* Cette fonction va générer une liste d'affiches, 
+* en fonction du contexte.
+*
+*/
 
 function c12_affiches( $auteur ) {
-
- // Loop for "Xavier Robel"
-  // Query for five attachments 
   
-  // Note: 'posts_per_page' => 5, 
-  // défini dans pre-get-posts.php
+  // Note: le nombre d'affiches
+  // est défini dans pre-get-posts.php
+  // avec 'posts_per_page' => 5, 
   
   $context = '';
   
@@ -97,14 +100,13 @@ function c12_affiches( $auteur ) {
   $c12_affiches = new WP_Query( array(
    	'post_type' => 'attachment',
    	'post_status' => 'any',
-   	// 'post_mime_type' => 'image/jpeg',
    	'orderby'  => 'date',
    	'order'  => 'DESC',
    	'tax_query' => array(
    			array(
    				'taxonomy' => 'affiches',
    				'field'    => 'slug',
-   				'terms'    => $auteur, // thomas-perrodin
+   				'terms'    => $auteur, // p.ex. thomas-perrodin
    			),
    	),
   	) );
@@ -119,7 +121,7 @@ function c12_affiches( $auteur ) {
 	  	
 	  	$term = get_term_by( 'slug', $auteur, 'affiches' ); 
 	  	
-	  	$html .= $term->name; // par Thomas Perrodin
+	  	$html .= $term->name; // p.ex. "par Thomas Perrodin"
 	  	
 	  	$html .= '</h2>';
 	  	
@@ -223,6 +225,9 @@ function c12_affiches( $auteur ) {
 
 /*
 * Display linked article
+*
+* Utilisé sur la page des affiches, pour lier au concert.
+* Le concert est l'article parent de l'affiche.
  */
 
 function c12_linked_article( $c12_article_id ) {
@@ -230,18 +235,26 @@ function c12_linked_article( $c12_article_id ) {
 	$html = '';
 	
 	$inner_query = new WP_Query(array(
-		'p'   => $c12_article_id,
+		'p' => $c12_article_id,
 	));
 	
   while ($inner_query->have_posts()) : $inner_query->the_post();
   
   	$html .= c12_linked_article_output();
-      
+ 
   endwhile;
     
   return $html;  
 	
 }
+
+/*
+* Display linked SPIP article
+*
+* Utilisé sur la page des affiches, pour lier au concert.
+* On utilise le champ 'c12_spip_article_id' pour identifier le concert.
+*
+ */
 
 function c12_linked_spip_article( $c12_spip_article_id ) {
 
