@@ -38,7 +38,7 @@ function c12_other_concerts() {
 			$c12_other_concerts = new WP_Query( array(
 				'posts_per_page' => 99,
 				'tag_id' => $tag->term_id,
-				'order'  => 'ASC',
+				'order'  => 'DESC',
 				'post__not_in' => array( $current_post_id )
 			) );
 			
