@@ -197,16 +197,8 @@ function c12_mailing_signup() {
 
 	?>
 	<div id="mailing-list" class="newsletter-form prop-item">
-		<label for="email" class="inco prop-item-label">Newsletter</label>
-		<form action="https://manager.infomaniak.com/public/mail/mailinglist_process.php" method="post">
-		<input type="hidden" name="maillist" value="aW5mb3JtYXppb25AY2F2ZTEyLm9yZw=="/>
-		<input type="hidden" name="action" value="add" />
-		<input type="hidden" name="url" value="https://www.cave12.org/inscription-reussie/" />
-		<input type="email" id="email" name="email" placeholder='votre email' class="form-text inco" required />
-		<input type="submit" name="add" value="s’abonner" class="button inco" />
-		</form>
-		
-	</div>
+		<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/3QUt/bAe" width="100%"></iframe>
+	</div>	
 	<?php
 	
 }
