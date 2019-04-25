@@ -23,8 +23,23 @@ get_header(); ?>
 			  echo '<div class="date-block">';
 			  
 			  echo'<div id="date" class="art-date dtstart" title="'.esc_attr($mem_date["start-iso"]).'">';
+			  
+			  // Nom du jour
 					echo'<div class="uppercase center day">'.date_i18n( "l", $mem_date["start-unix"]).'</div>';
-					echo'<div class="center daynr notc">'.date_i18n( "j", $mem_date["start-unix"]).'</div>';
+				
+				// Numéro du jour
+				
+				$c12_day_nr = date( "j", $mem_date["start-unix"] );
+				
+				if ( 1 == $c12_day_nr ) {
+				
+					$c12_day_nr = '1<sup class="sup">er</sup>';
+					
+				}
+				
+					echo'<div class="center daynr notc">'.$c12_day_nr.'</div>';
+				
+				// Mois
 					echo'<div class="uppercase center month">'.date_i18n( "F", $mem_date["start-unix"]).'</div>';
 					echo'<div class="uppercase center year">'.$mem_date["date-year"].'</div>';
 				echo '</div></div><!-- .date-block -->';

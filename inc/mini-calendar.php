@@ -34,16 +34,18 @@
 						<a href="<?php echo c12_future_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php 
 						
-						$c12_item_day_nr = date( "d", $c12_item_date["start-unix"] );
+						$c12_item_day_nr = date( "j", $c12_item_date["start-unix"] );
 						
-						if (1 == $c12_item_day_nr) {
+						echo $c12_item_day_nr;
 						
-							echo '1<sup class="sup">er</sup>';
-							
-						} else {
-						
-							echo $c12_item_day_nr;
-						}
+//						if (1 == $c12_item_day_nr) {
+//						
+//							echo '1<sup class="sup">er</sup>';
+//							
+//						} else {
+//						
+//							echo $c12_item_day_nr;
+//						}
 						
 						 ?>
 						</a></li>
