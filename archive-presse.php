@@ -16,20 +16,30 @@ get_header(); ?>
 				.presse-item-content {
 					display: flex;
 				}
+				
+				.presse-item h2 {
+					font-size: 1.2em;
+					line-height: 1.2;
+					margin-top: 1.8em;
+					margin-bottom: 0;
+				}
+				
 				.presse-fichier {
 /*					padding-right: 1em;*/
 /*					border:  1px solid #aaa;*/
 					min-width: 12em;
 				}
 				
-				.presse-fichier  img {
+				.presse-fichier img {
 					max-width: 100%;
 					height: auto;
+					border: 1px solid #aaa;
+					
 				}
 				.presse-quote {
 					padding: 1em;
 					font-style: italic;
-					font-size: 1.2em;
+					font-size: 1.1em;
 				}
 				
 				.presse-quote p:first-of-type::before {
@@ -45,9 +55,27 @@ get_header(); ?>
 				.presse-item .download::before {
 					content:  "↧ ";
 				}
+				
+				/* Passage à 2 colonnes après une certaine largeur */
+				
+				@media screen and (min-width: 68em) {
+				  .presse-items {
+				    column-count: 2;	
+						column-gap: 3em;
+				  }
+					
+					.presse-item {
+						-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+						          page-break-inside: avoid; /* Firefox */
+						               break-inside: avoid; /* IE 10+ */
+					}
+				}
+				
 			</style>
 			
 			<h1 class="pagetitle">Presse</h1>
+			
+			<div class="presse-items">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				
@@ -136,6 +164,8 @@ get_header(); ?>
 					
 				</article>
 			<?php endwhile; ?>
+			
+			</div><!-- .presse-items -->
 
 		</section>
 
