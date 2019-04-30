@@ -24,6 +24,10 @@ get_header(); ?>
 					margin-bottom: 0;
 				}
 				
+				.presse-item:first-of-type h2 {
+					margin-top: 0;
+				}
+				
 				.presse-fichier {
 /*					padding-right: 1em;*/
 /*					border:  1px solid #aaa;*/
