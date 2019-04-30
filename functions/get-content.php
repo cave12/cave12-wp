@@ -36,9 +36,11 @@ function c12_other_concerts() {
 			// & Exclude current post.
 			
 			$c12_other_concerts = new WP_Query( array(
-				'posts_per_page' => 99,
+				'posts_per_page' => -1,
 				'tag_id' => $tag->term_id,
 				'order'  => 'DESC',
+				'orderby' => 'meta_value',
+				'meta_key' => '_mem_start_date',
 				'post__not_in' => array( $current_post_id )
 			) );
 			
