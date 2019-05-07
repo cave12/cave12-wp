@@ -20,9 +20,9 @@ Dans: functions/get-content.php
 
 Par le critère 'orderby'  => 'date', donc c'est la date d'ajout du fichier.
 
-Remarque: ce serait souhaitable de les faire apparaître par date de concert. Les dates des fichiers ne sont pas modifiables dans l'interface WP.
+Remarque: ce serait souhaitable de les faire apparaître par **date de concert**. Or les dates des fichiers ne sont pas modifiables dans l'interface WP.
 
-Pour régler ce problème, on peut mettre à jour la date des fichiers pour les rendre identiques à celles des concerts.
+Pour régler ce problème, on a décidé de corriger automatiquement la date des fichiers pour les rendre identiques à celles des concerts.
 
-On utilisera pour cela la fonction "c12_fix_affiches()", déjà utilisée pour produire une relation parent > enfant entre le concert et les affiches.
+On utilisera pour cela la fonction "c12_fix_affiches()", déjà utilisée pour produire une relation "parent > enfant" entre le concert et les affiches.
 
