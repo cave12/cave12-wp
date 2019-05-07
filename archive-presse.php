@@ -120,32 +120,47 @@ get_header(); ?>
 						if ($c12_presse["c12_presse_fichier"]) {
 						
 							echo '<div class="presse-fichier">';
+							
+								// Produire le lien
+								
+								$c12_presse_img = wp_get_attachment_image_src(
+									$c12_presse["c12_presse_fichier"]["ID"], 
+									'full' 
+								);
+								
+								echo '<a href="'.$c12_presse_img[0] .'" data-width="'.$c12_presse_img[1] .'" data-height="'.$c12_presse_img[2] .'">'; 
 						
-								if ( $c12_presse["c12_presse_fichier"]["mime_type"] == "application/pdf" ) {
-								
-									// echo '<p>(Produce PDF preview!)</p>';	
-											
-									echo wp_get_attachment_image( 
-										$c12_presse["c12_presse_fichier"]["ID"], 
-										'medium' 
-									);	
-								
-								} else if ( $c12_presse["c12_presse_fichier"]["type"] == "image" ) {
-								
-									$c12_presse_file = $c12_presse["c12_presse_fichier"]["url"];
+								// Produire l'image
+							
+									if ( $c12_presse["c12_presse_fichier"]["mime_type"] == "application/pdf" ) {
 									
-									if (!empty( $c12_presse["c12_presse_fichier"]["sizes"]["large"] )) {
+										// echo '<p>(Produce PDF preview!)</p>';	
+												
+										echo wp_get_attachment_image( 
+											$c12_presse["c12_presse_fichier"]["ID"], 
+											'medium' 
+										);	
 									
-										$c12_presse_file = $c12_presse["c12_presse_fichier"]["sizes"]["large"];
+									} else if ( $c12_presse["c12_presse_fichier"]["type"] == "image" ) {
+									
+										$c12_presse_file = $c12_presse["c12_presse_fichier"]["url"];
+										
+										if (!empty( $c12_presse["c12_presse_fichier"]["sizes"]["large"] )) {
+										
+											$c12_presse_file = $c12_presse["c12_presse_fichier"]["sizes"]["large"];
+										}
+										
+										echo '<img src="'.$c12_presse_file.'" />';
+																		
 									}
 									
-									echo '<img src="'.$c12_presse_file.'" />';
-																	
-								}
+								echo '</a>';
 								
-//								echo '<pre>';
-//								var_dump($c12_presse["c12_presse_fichier"]);
-//								echo '</pre>';
+//								if ( current_user_can( 'edit_others_pages' ) ) {
+//									echo '<pre>';
+//									var_dump($c12_presse["c12_presse_fichier"]);
+//									echo '</pre>';
+//								}
 								
 								// Download Link
 								

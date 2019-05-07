@@ -141,8 +141,17 @@ function c12_affiches( $auteur ) {
   			
   			$html .= '<figure class="affiche">';
   			$html .= '<a href="'; 
-  			$html .= wp_get_attachment_url( $id ); 
-  			$html .= '">';
+  			// $html .= wp_get_attachment_url( $id ) .'"'; 
+  			// get width and height data attributes!
+  			$c12_affiche_src = wp_get_attachment_image_src(
+  				$id, 
+  				'large'
+  			);
+  			$html .= $c12_affiche_src[0] .'"'; // URL
+  			$html .= ' data-width="'.$c12_affiche_src[1] .'"'; 
+  			$html .= ' data-height="'.$c12_affiche_src[2] .'"'; 
+  			
+  			$html .= '>';
 
 				$html .= wp_get_attachment_image(
 					$id, // Image attachment ID
@@ -156,8 +165,10 @@ function c12_affiches( $auteur ) {
 				$html .= '<figcaption class="affiche-meta">'; 
 					
 					// Concert lié?
-					// Utiliser le custom field:
-					// c12_spip_linked_article
+					
+					// 1) Tester le custom field:
+					// c12_spip_linked_article 
+					// (pour concerts importés depuis SPIP)
 					
 					if ( get_post_meta( $id, 'c12_spip_linked_article', true ) ) {
 										
@@ -168,13 +179,7 @@ function c12_affiches( $auteur ) {
 
 					} else {
 					
-						/*
-						* Tester via ACF ?
-						*	https://support.advancedcustomfields.com/forums/topic/reverse-query-relationship-subfield-which-is-nested-in-a-repeater-field/
-						
-						* conclusion: non, cela ferait une requête trop lourde!
-						* mieux: on a fait un code sur la page du concert, qui va checker les images de la galerie liée, et remplir leur champ "post_parent" avec l'ID de l'article.
-						*/
+						// 2) Tester la relation enfant - parent:
 						
 						$parent_id = $post->post_parent;
 						
@@ -186,14 +191,23 @@ function c12_affiches( $auteur ) {
 						
 					}
 					
-					$html .= '<div><a href="'; 
-					$html .= wp_get_attachment_url( $id ); 
-					$html .= '">PDF</a>';
-												
+					$html .= '<div class="extra">';
+					
+					// Vérifier format (PDF ou JPG?)
+					$mime_type = get_post_mime_type( $id );
+										
+					if ( $mime_type == "application/pdf" ) {
+					
+						$html .= '<a href="'; 
+						$html .= wp_get_attachment_url( $id ); 
+						$html .= '">PDF</a>';
+						
+					}
+							
 					if ( current_user_can( 'edit_others_pages' ) ) {
-						$html .= ' ( <a href="'; 
-						$html .= admin_url('upload.php?item='.$id);
-						$html .= '">edit</a> )';
+//						$html .= ' ( <a href="'; 
+//						$html .= admin_url('upload.php?item='.$id);
+//						$html .= '">edit</a> )';
 					}
 					
 					$html .= '</div>';
@@ -321,9 +335,11 @@ function c12_fix_affiches( $article_id ) {
 
 		if  ( $c12_affiches[0] > 0) {
 		
-//			echo '<pre>';
-//			var_dump($c12_affiches);
-//			echo '</pre>';
+//			if ( current_user_can( 'edit_others_pages' ) ) {
+//				echo '<pre>';
+//				var_dump($c12_affiches);
+//				echo '</pre>';
+//			}
 									
 			foreach ( $c12_affiches as $affiche ) {
 			
@@ -340,6 +356,12 @@ function c12_fix_affiches( $article_id ) {
 					$affiche_id = $affiche;
 					
 				}
+				
+//				if ( current_user_can( 'edit_others_pages' ) ) {
+//					echo '<pre>affiche_id : ';
+//					echo $affiche_id ;
+//					echo '</pre>';
+//				}
 			
 //				 echo '<p>found attachment: id <a href="'.admin_url('upload.php?item='.$affiche_id).'">'. $affiche_id.'</a></p>';
 //				
