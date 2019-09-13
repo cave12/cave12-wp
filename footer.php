@@ -44,7 +44,7 @@
 			<?php endif; ?>
 			
 			<ul role="navigation" class="navigation nav-special">
-				<li><a href="http://www.ville-ge.ch/culture/prixVdG11/laureat_musique.html" class="prix-ville-geneve" target="_blank">prix 2011 de la ville de genève</a></li>
+				<li><a href="http://www.ville-geneve.ch/fileadmin/public/Departement_3/Documents_d_actualite/prix-ville-geneve-2011.pdf" class="prix-ville-geneve" target="_blank">prix 2011 de la ville de genève</a></li>
 			</ul>
 			
 			<ul role="navigation" class="navigation">
