@@ -15,13 +15,13 @@ Les besoins de ce type de contenu:
 - Taxonomie: artistes (post_tag): on rend disponible cette taxonomie, ainsi on peut lier un article à un artiste.
 - Taxonomie: thématiques (p.ex: label, nomadisme...)
 
-Champs ACF:
+## Champs ACF:
 
 - Fichier joint (PDF ou image) "c12_presse_fichier"
 - Source: champ de texte (TDG, Le Courier...) "c12_presse_source"
 - Date de publication: champ de date (19.4.2010) "c12_presse_date"
 
-Le code :
+## Le code :
 
 - Déclaration du type de contenu: dans l'extension "C12 Presse"
 - La page archive pour ce type de contenu: archive-presse.php
