@@ -101,7 +101,7 @@ function c12_concerts() {
  			'post_status' => array( 'publish', 'future' ),
  			'date_query' => array(
  				array(
- 					'after'     => date('Y-m-d', strtotime('-60 days')),
+ 					'after'     => date('Y-m-d', strtotime('-360 days')),
  					'inclusive' => true,
  				),
  			),
