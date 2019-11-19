@@ -24,5 +24,5 @@ Remarque: ce serait souhaitable de les faire apparaître par **date de concert**
 
 Pour régler ce problème, on a décidé de corriger automatiquement la date des fichiers pour les rendre identiques à celles des concerts.
 
-On utilisera pour cela la fonction "c12_fix_affiches()", déjà utilisée pour produire une relation "parent > enfant" entre le concert et les affiches.
+On utilise pour cela la fonction "c12_fix_affiches()", déjà utilisée pour produire une relation "parent > enfant" entre le concert et les affiches.
 
