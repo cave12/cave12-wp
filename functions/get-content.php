@@ -151,6 +151,9 @@ function c12_affiches( $auteur ) {
   			$html .= ' data-width="'.$c12_affiche_src[1] .'"'; 
   			$html .= ' data-height="'.$c12_affiche_src[2] .'"'; 
   			
+  			// Add date, in order to debug things.
+  			$html .= ' data-date="'.$post->post_date.'"';
+  			
   			$html .= '>';
 
 				$html .= wp_get_attachment_image(
@@ -297,7 +300,11 @@ function c12_linked_article_output() {
 	
 	$output = '';
 	
-	$output .= '<div class="concert"><a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a></div>';
+	$output .= '<div class="concert">
+		<a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a><br>';
+		$mem_date = c12_date( get_the_ID() );
+		$output .= date_i18n( "d.m.Y", $mem_date["start-unix"]);
+		$output .= '</div>';
 	
 //	$output .= '<div class="date">';
 //	$mem_date = c12_date(get_the_ID());
@@ -369,7 +376,6 @@ function c12_fix_affiches( $article_id ) {
 				
 				$mem_date = c12_date($article_id);
 				$fix_date = $mem_date["start-iso"]; 
-//				echo $fix_date;
 				
 				$c12_data = array(
 			      'ID'            => $affiche_id,
