@@ -37,6 +37,8 @@ h3.titre-sommaire-h3,
 	box-shadow: inset 0 0 8px rgba(211, 211, 211, 0.67);
 	opacity: 1;
 	background-color: #fdfdfd;
+	margin-bottom: 1em;
+	padding: 10px;
 }
 
 .prop-item:hover {
@@ -47,6 +49,15 @@ h3.titre-sommaire-h3,
 .prop-item-label {
 	color: #ce0000;
 	cursor: pointer;
+}
+
+.prop-item h2 {
+	margin-top: 0;
+	margin-bottom: 0.2em;
+}
+
+.prop-item p {
+	margin: 0.5em 0;
 }
 
 .form-padding {

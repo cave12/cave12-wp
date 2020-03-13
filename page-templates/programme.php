@@ -27,6 +27,20 @@ get_header(); ?>
 	
 	c12_mailing_signup(); 
 	
+	
+	// Intro content
+	 if ($c12_page_content) {
+	 		
+	 		echo '<div class="intro-content prop-item">';
+	 		
+	 		echo apply_filters('the_content',get_the_content( $c12_page_content ));
+	 		
+	 		echo '</div>';
+	 
+	 }
+	 
+	 
+	
 	?>
 	
 	</div><!--#propaganda-->
@@ -130,13 +144,10 @@ get_header(); ?>
 	  wp_reset_postdata();
 	 endif; 
 	 
-	 if ($c12_page_content) {
-	 		
-//	 		echo $c12_page_content;
-	 		echo apply_filters('the_content',get_the_content( $c12_page_content ));
-	 
-	 }
-	
+	 if( function_exists('acf_add_local_field_group') ):
+	 	the_field('frontpage_footer');
+		endif;
+		
 	 ?>
 
 </div><!--#contenu-->
