@@ -128,7 +128,8 @@ get_header(); ?>
 									'full' 
 								);
 								
-								echo '<a href="'.$c12_presse_img[0] .'" data-width="'.$c12_presse_img[1] .'" data-height="'.$c12_presse_img[2] .'">'; 
+								echo '<a href="'.$c12_presse_img[0] .'" data-lbwps-width="'.$c12_presse_img[1] .'" data-lbwps-height="'.$c12_presse_img[2] .'">'; 
+								// echo '<a href="'.$c12_presse_img[0] .'" >'; 
 						
 								// Produire l'image
 							
@@ -163,6 +164,7 @@ get_header(); ?>
 //								}
 								
 								// Download Link
+								// **************
 								
 								echo '<a class="download" href="'.$c12_presse["c12_presse_fichier"]["url"].'">';
 								

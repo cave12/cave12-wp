@@ -79,8 +79,8 @@ function c12_affiches( $auteur ) {
   				'large'
   			);
   			$html .= $c12_affiche_src[0] .'"'; // URL
-  			$html .= ' data-width="'.$c12_affiche_src[1] .'"'; 
-  			$html .= ' data-height="'.$c12_affiche_src[2] .'"'; 
+  			$html .= ' data-lbwps-width="'.$c12_affiche_src[1] .'"'; 
+  			$html .= ' data-lbwps-height="'.$c12_affiche_src[2] .'"'; 
   			
   			// Add date, in order to debug things.
   			$html .= ' data-date="'.$post->post_date.'"';
