@@ -72,6 +72,8 @@ function c12_fix_affiches( $article_id ) {
 				  );
 				
 				wp_update_post( $c12_data );
+
+				// Ceci met à jour les données du fichier-affiche.
 				
 			}
 		}
