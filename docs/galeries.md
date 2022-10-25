@@ -1,4 +1,7 @@
-# Galeries
+---
+layout: page
+title: Galeries
+---
 
 ## Comment sont gérées les galeries d'images?
 

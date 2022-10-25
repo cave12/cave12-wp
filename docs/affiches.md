@@ -1,3 +1,8 @@
+---
+layout: page
+title: Affiches
+---
+
 # Modèle Affiches
 
 ## Où se trouve le modèle des pages affiches?
@@ -26,3 +31,8 @@ Pour régler ce problème, on a décidé de corriger automatiquement la date des
 
 On utilise pour cela la fonction "c12_fix_affiches()", déjà utilisée pour produire une relation "parent > enfant" entre le concert et les affiches.
 
+## Comment les affiches sont-elles liées aux concerts?
+
+- Relation via post_parent = le fichier a été uploadé sur un article. Son champ "post_parent" contient l'ID de l'article.
+- Relation via un custom field, c12_spip_article_id
+- Relation via ACF = champ ACF "galerie".

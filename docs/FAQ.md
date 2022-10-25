@@ -1,3 +1,9 @@
+---
+layout: page
+title: FAQ
+permalink: faq.html
+---
+
 # FAQ du site Cave12
 
 ### Comment est faite la mise en page, quels sont les éléments principaux?

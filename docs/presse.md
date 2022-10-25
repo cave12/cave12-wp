@@ -1,3 +1,9 @@
+---
+layout: page
+title: Section Presse
+permalink: presse.html
+---
+
 # Section Presse
 
 En février 2019, nous ajoutons au site une section "Presse".
