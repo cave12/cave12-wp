@@ -1,0 +1,16 @@
+remote_theme: coursweb/jk-theme
+title: Documentation Cave12
+description: Information technique
+lang: fr-FR
+chapters:
+ - title: Cave12.org
+   url: https://cave12.org/
+# - title: Bases en informatique
+#   url: https://cours-web.ch/informatique-base/
+
+   # Footer content
+# Content is split in three columns.   
+footer_col_1: <ul class="contact-list">
+  <li>Manuel Schmalstieg</li>
+  <li>2022</li></ul>
+footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/cave12/cave12-wp/">Lien Github</a></li></ul>
