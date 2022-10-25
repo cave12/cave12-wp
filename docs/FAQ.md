@@ -22,17 +22,12 @@ Dans le code: un div#page englobe le tout.
 
 ### Quels sont les relations entre contenus?
 
-Explicatifs dans https://github.com/cave12/migration-spip-wp
+Explicatifs dans [https://github.com/cave12/migration-spip-wp](https://github.com/cave12/migration-spip-wp)
 
-#### Comment les affiches sont-elles liées aux concerts?
-
-- Relation via post_parent = le fichier a été uploadé sur un article. Son champ "post_parent" contient l'ID de l'article.
-- Relation via un custom field, c12_spip_article_id
-- Relation via ACF = champ ACF "galerie".
-
-***
 
 ### Production de liens sur les URL du contenu, comment ça fonctionne?
+
+Dans le contenu des articles, il y a fréquemment des URL pointant vers les sites des articles. Il faut une procédure automatique pour leur ajouter le code HTML nécessaire à un lien.
 
 Dans single.php, on applique ceci:
 

@@ -4,4 +4,4 @@ title: Docs Cave12
 permalink: index.html
 ---
 
-Documentation Cave12
+Documentation du site Cave12.org et du thème WordPress.
