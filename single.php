@@ -66,7 +66,7 @@ get_header(); ?>
 						<?php endif;
 					
 					 ?>
-			    	<!-- <h2 class="#EDIT{surtitre} surtitre">(#SURTITRE)</h2> -->
+			    	
 			    	<?php 
 			    	
 			    	if ( ! has_excerpt() ) {

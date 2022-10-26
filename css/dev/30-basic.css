@@ -355,51 +355,88 @@ h1.site-title,
 
 /* ----- DATE ------ */
 
-.date-block {
-	margin:10px 10px 0 10px;
-	float: none;
-	clear: none;
-	position: absolute;
-	z-index: 10;
-}
-
-.art-date 		{
-	float:left;
-	display: inline;
-	position:relative;
-	top:0px;
-	left:0px;
-	
-	text-align:center;
+.art-date {
 	padding:10px;
-	min-width: 80px;
-
 	text-decoration: none;
 	background-color: #fff;
 	border: 1px solid #333;
 	box-shadow: inset 0 0 31px rgba(208, 208, 208, 0.61);
+	font-size: 1.1em;
+}
+
+.art-date div {
+	display: inline;
+	margin-right: 0.4em;
 }
 
 .single-post .date-block,
 .page_article .date-block {
-	margin-top: 1em;
-	display: none;
-}
+		margin-top: 1em;
+	}
 
-.page_article .art-date {
-	min-width: 5em;
-}
+/* styles for desktop */
 
-.contenu.programme h2.surtitre {
-	margin-top:10px;
-}
+@media only screen and (min-width : 740px) {
 
-.daynr {
-	font-size: 3em;
-}
+	.date-block {
+		margin:10px 10px 0 10px;
+		float: none;
+		clear: none;
+		position: absolute;
+		z-index: 10;
+	}
+	
+	.art-date 		{
+		float:left;
+		display: inline;
+		position:relative;
+		top:0px;
+		left:0px;
+		text-align:center;
+		min-width: 80px;
+		font-size: 1em;
+	}
 
-.art-date .day, .art-date .month {
-	font-size:0.9em;
+	.art-date div {
+		display: block;
+		margin-right: 0;
+	}
+	
+	
+
+	.single-post .date-block,
+	.page_article .date-block {
+		display: block;
+	}
+	.page_article .art-date {
+		min-width: 5em;
+	}
+
+	.contenu.programme h2.surtitre {
+		margin-top:10px;
+	}
+
+	.daynr {
+		font-size: 3em;
+	}
+
+	.art-date .day, .art-date .month {
+		font-size:0.9em;
+	}
+
+	
+
+	.art-date .sup { /* superscript */
+		font-size: 50%;
+		margin: 0 -0.2em;
+	}	
+
+	.mini-cal-box .sup { 
+		font-size:70%;
+		vertical-align: super;
+	}
+
+	
 }
 
 .contenu .art-box {
@@ -414,16 +451,6 @@ h1.site-title,
 
 .contenu div.art-box:hover{
 	border-color: #ce0000;
-}
-
-.art-date .sup { /* superscript */
-	font-size: 50%;
-	margin: 0 -0.2em;
-}	
-
-.mini-cal-box .sup { 
-	font-size:70%;
-	vertical-align: super;
 }
 
 .contenu .demain {

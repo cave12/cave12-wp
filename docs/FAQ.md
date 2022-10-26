@@ -82,3 +82,9 @@ Les URL possibles:
 - https://www.cave12.org/?p=1782
 
 ***
+
+## Modèles de page
+
+### Quel modèle de page est utilisé pour la page d'accueil ?
+
+C'est le modèle de page "Programme", situé dans `page-templates > programme.php`
