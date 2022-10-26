@@ -57,9 +57,12 @@ function c12_linked_spip_article( $c12_spip_article_id ) {
 function c12_linked_article_output() {
 	
 	$output = '';
+
+	// need to fix title typography
+	$c12_article_title = c12_process_slashes(get_the_title());
 	
 	$output .= '<div class="concert">
-		<a href="'.get_the_permalink().'" class="lien-article">'.get_the_title().'</a><br>';
+		<a href="'.get_the_permalink().'" class="lien-article">'.$c12_article_title.'</a><br>';
 		$mem_date = c12_date( get_the_ID() );
 		$output .= date_i18n( "d.m.Y", $mem_date["start-unix"]);
 		$output .= '</div>';
