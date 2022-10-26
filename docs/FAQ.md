@@ -22,7 +22,7 @@ Dans le code: un div#page englobe le tout.
 
 ### Quels sont les relations entre contenus?
 
-Explicatifs dans [https://github.com/cave12/migration-spip-wp](https://github.com/cave12/migration-spip-wp)
+Explicatifs dans [https://cave12.github.io/migration-spip-wp/](https://cave12.github.io/migration-spip-wp/)
 
 
 ### Production de liens sur les URL du contenu, comment ça fonctionne?
