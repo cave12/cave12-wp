@@ -129,7 +129,11 @@ get_header(); ?>
 					
 								echo '<div class="introduction entry-content">';
 								echo '<a href="'. c12_future_permalink() .'" rel="bookmark" class="url description">';
-					      the_excerpt();
+
+						  	$c12_concert_excerpt = get_the_excerpt();
+							$c12_concert_excerpt = c12_process_chars($c12_concert_excerpt);
+							echo apply_filters('the_excerpt',$c12_concert_excerpt);
+
 					     	echo '</a></div>';
 					}
 					

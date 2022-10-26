@@ -61,7 +61,14 @@ function my_login_logo_url_title() {
 
 add_filter( 'login_headertext', 'my_login_logo_url_title' );
 
+/* Process special characters such as _ to allow line returns */
 
+function c12_process_chars($c12_content) {
+			
+	$c12_content = str_replace("_", "_<wbr>", $c12_content);
+	
+	return $c12_content;
+}
 
 /* Turn links into hyperlinks
 ******************************/
