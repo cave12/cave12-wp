@@ -87,10 +87,7 @@ and (min-width : 740px) {
 			display: none;
 		}
 		
-		.single-post .date-block,
-		.page_article .date-block {
-			display: block;
-		}
+		
 		.contenu .intro {
 			padding-left: 9em;
 		}
