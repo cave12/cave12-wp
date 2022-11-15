@@ -342,8 +342,6 @@ h1.site-title,
 	margin:25px 0 10px 0;
 } /* keeps with following P */
 
-#contenu.programme {} 
-
 .contenu div.single,
 .contenu div.surlignable {
 	padding: 0 10px 10px 10px;
@@ -559,4 +557,9 @@ span.dtstart {
 .page-navigation {
 	list-style: none;
     padding-left: 0;
+}
+
+.page-navigation ul {
+	list-style-type: none;
+	padding-left: 0.5em;
 }
