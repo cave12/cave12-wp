@@ -555,3 +555,8 @@ span.dtstart {
 }
 
 /* @end */
+
+.page-navigation {
+	list-style: none;
+    padding-left: 0;
+}

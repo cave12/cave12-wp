@@ -24,6 +24,19 @@ Dans le code: un div#page englobe le tout.
 
 Explicatifs dans [https://cave12.github.io/migration-spip-wp/](https://cave12.github.io/migration-spip-wp/)
 
+En résumé:
+
+- Concerts : le contenu standard, on utilise les Articles (Posts) de WP.
+- Pages : contenu de pages info.
+- Presse : contenu custom, pour gérer les articles de presse. Comportent des champs ACF standard. Voir la doc sous [presse.md](presse.md).
+- Archives : contenu custom.
+- Affiches : fichiers média classés avec un tag.
+
+### Modèles de page
+
+#### Quel est le modèle de page utilisé pour la page d'accueil ?
+
+La page d'accueil utilise le modèle de page "Programme", situé dans `page-templates > programme.php`
 
 ### Production de liens sur les URL du contenu, comment ça fonctionne?
 
@@ -33,11 +46,17 @@ Dans single.php, on applique ceci:
 
 `$c12_content = c12_process_hyperlinks($c12_content);`
 
+### Minification du CSS
+
+Le css est réparti en différents fichiers, chargés par un fichier-index nommé 00-main.css.
+
+Actuellement (novembre 2022) il n'y a pas de minification en place. Le poids total du CSS non minifié est de 38 ko.
 
 
 ### Gestion du LazyLoad, comment ça fonctionne?
 
 On utilise un script "LazyLoad" pour optimiser le chargement des pages ayant beaucoup d'images (la section Affiches). Le script utilisé provient du theme [WPRig](https://wprig.io/). C'est une version modifiée du script LazyLoad de Jetpack.
+
 
 ### Gestion du iCal, comment ça fonctionne?
 
@@ -81,10 +100,3 @@ Les URL possibles:
 - https://www.cave12.org/ical/
 - https://www.cave12.org/?p=1782
 
-***
-
-## Modèles de page
-
-### Quel modèle de page est utilisé pour la page d'accueil ?
-
-C'est le modèle de page "Programme", situé dans `page-templates > programme.php`
