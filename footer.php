@@ -43,9 +43,6 @@
 					?>
 			<?php endif; ?>
 			
-			<ul role="navigation" class="navigation nav-special">
-				<li><a href="http://www.ville-geneve.ch/fileadmin/public/Departement_3/Documents_d_actualite/prix-ville-geneve-2011.pdf" class="prix-ville-geneve" target="_blank">prix 2011 de la ville de genève</a></li>
-			</ul>
 			
 			<ul role="navigation" class="navigation">
 			<!--<li><a href="http://rss.cave12.org/cave12" title="S'abonner au RSS" rel="alternate" type="application/rss+xml">RSS</a></li>-->
