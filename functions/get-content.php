@@ -13,6 +13,12 @@ require_once( 'get-content/affiches.php' );
 require_once( 'get-content/fix-affiches.php' );
 
 /*
+ * Photos
+*/
+
+require_once( 'get-content/photos.php' );
+
+/*
  * Articles liés
 */
 

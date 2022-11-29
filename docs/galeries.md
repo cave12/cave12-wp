@@ -1,7 +1,19 @@
 ---
 layout: page
-title: Galeries
+title: Galeries et images
 ---
+
+## Les taxonomies des images
+
+### La taxonomie Affiches
+
+Les images possèdent une taxonomie "Affiches". Dans cette taxonomie existent trois termes: "par Harrisson", "par Thomas Perrodin", "par Xavier Robel" (on pourrait en ajouter d'autres).
+
+Cette taxonomie est déclarée dans functions > taxonomies.php, et disponible uniquement pour les fichiers joints. Elle permet de distinguer les affiches des autres fichiers, et de les classifier par auteur.
+
+### La taxonomie Photos
+
+Les images possèdent une taxonomie "Photos" qui permet de trier les photos par type. Elle est déclarée au même endroit que "Affiches" ci-dessus. Les termes dans cette taxonomie: Diaporama, Concerts, Public, Locaux, Chantier.
 
 ## Comment sont gérées les galeries d'images?
 
@@ -9,12 +21,14 @@ On utilise l'extension "**[Lightbox with PhotoSwipe](https://wordpress.org/plugi
 
 ### Quel code est nécessaire pour faire fonctionner cette Lightbox?
 
-Théoriquement aucun, l'extension détecte devrait détecter les structures de balises. Voir [cette info sur le forum](https://wordpress.org/support/topic/required-data-attributes-on-link/).
+Théoriquement aucun, l'extension devrait détecter les structures de balises. Voir [cette info sur le forum](https://wordpress.org/support/topic/required-data-attributes-on-link/).
 
 Dans la pratique, il semble nécessaire d'ajouter deux attributs sur les balises des liens-images:
 
 - `data-lbwps-width` (anciennement `data-width`).
 - `data-lbwps-height` (anciennement `data-height`).
+
+
 
 
 

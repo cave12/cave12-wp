@@ -110,6 +110,10 @@ function c12_register_archive_post_type() {
 add_action( 'init', 'c12_register_taxonomies' );
 function c12_register_taxonomies() {
 
+	/*
+	 * Affiches
+	*/
+
 	$labels = array(
 		"name" => "Affiches",
 		"label" => "Affiches",
@@ -134,6 +138,35 @@ function c12_register_taxonomies() {
 		"show_admin_column" => true,
 	);
 	register_taxonomy( 'affiches', array( 'attachment' ), $args );
+	
+	/*
+	 * Photos
+	*/
+
+	$labels = array(
+		"name" => "Photos",
+		"label" => "Photos",
+		"search_items" => "Recherche",
+		"popular_items" => "Les + utilisées",
+		"all_items" => "Tous les éléments",
+		"parent_item" => "Eléments parents",
+		"parent_item_colon" => "Elément parent",
+		"edit_item" => "Modifier",
+		"update_item" => "Enregistrer",
+		"add_new_item" => "Nouvel élément",
+		"new_item_name" => "Titre",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"hierarchical" => true,
+		"label" => "Photos",
+		"show_ui" => true,
+		"query_var" => true,
+		"rewrite" => array( 'slug' => 'photos', 'with_front' => false ),
+		"show_admin_column" => true,
+	);
+	register_taxonomy( 'photos', array( 'attachment' ), $args );
 	
 	
 	/*
