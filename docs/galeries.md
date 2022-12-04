@@ -3,6 +3,14 @@ layout: page
 title: Galeries et images
 ---
 
+## Les tailles des images
+
+Les tailles définies (dans la page de [Réglages des médias](https://www.cave12.org/core/wp-admin/options-media.php)):
+
+- Thumbnail : 300 x 300
+- Medium : 900 x 900
+- Large : 2000 x 2000
+
 ## Les taxonomies des images
 
 ### La taxonomie Affiches
