@@ -33,7 +33,7 @@ function custom_register_styles() {
 			'c12',
 			get_stylesheet_directory_uri() . '/css/dev/00-main.css', // main.css
 			false, // dependencies
-			'20221129a' // version
+			'20221204a' // version
 	);
 
 	// remove some plugin CSS:

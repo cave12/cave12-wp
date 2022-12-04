@@ -51,12 +51,11 @@ and (min-width : 740px) {
 			margin-bottom: 1em;
 		}
 		
-		.bloc-navig ul li {
-			
-			margin-right: 0;
-			margin-bottom: 0;
+		.bloc-navig ul li {			
 			clear: left;
-			}
+			line-height: 1em;
+    		margin: 0.2em 0;
+		}
 			
 		.bloc-navig li a {
 			border: 0px;
