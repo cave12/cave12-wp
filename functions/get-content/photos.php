@@ -74,7 +74,7 @@ function c12_photos( $type ) {
 					
 				$html .= '</a>';
 					
-				$html .= '<figcaption class="affiche-meta">'; 
+				$html .= '<figcaption class="photo-meta">'; 
 					
 					// Concert lié?
 					
