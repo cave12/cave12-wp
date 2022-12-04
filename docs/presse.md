@@ -31,3 +31,9 @@ Les besoins de ce type de contenu:
 
 - Déclaration du type de contenu: dans l'extension "C12 Presse"
 - La page archive pour ce type de contenu: archive-presse.php
+
+## Ordre d'affichage
+
+On peut modifier l'ordre manuellement par glisser-déposer [sur la page qui liste les articles](https://www.cave12.org/core/wp-admin/edit.php?post_type=page).
+
+C'est l'extension "[Simple Page Ordering](https://wordpress.org/plugins/simple-page-ordering/)" qui permet cela.
