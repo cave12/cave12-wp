@@ -209,8 +209,9 @@ function c12_mailing_signup() {
 
 	?>
 	<div id="mailing-list" class="newsletter-form prop-item">
-		<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/3QUt/bAe" width="100%"></iframe>
-	</div>	
+	<iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://x1w5u.mjt.lu/wgt/x1w5u/5ok/form?c=a5dd81c0" width="100%"></iframe>
+	<script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
+	</div>
 	<?php
 	
 }
