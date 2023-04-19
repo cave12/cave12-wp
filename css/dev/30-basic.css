@@ -336,6 +336,7 @@ h1.site-title,
 
 .contenu p {
 	line-height: 1.25;
+	max-width: 38em;
 }
 .contenu h3 {
 	font-size:1.1em;
