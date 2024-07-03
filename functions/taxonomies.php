@@ -51,6 +51,9 @@ function c12_tags_are_artists() {
         'items_list' => 'Artist list',
         'most_used' => 'Most Used',
         'back_to_items' => '&larr; Back to Tags',
+		'name_field_description' => 'Le nom est la façon dont il apparaît sur votre site.',
+		'slug_field_description' => 'Le « slug » est la version du nom normalisée pour les URL.',
+		'desc_field_description' => 'La description n’est pas visible par défaut.'
     );
 
     $wp_taxonomies['post_tag']->label = 'Artistes';
